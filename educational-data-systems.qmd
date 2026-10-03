@@ -1,0 +1,500 @@
+---
+title: "From Spreadsheets to Systems"
+subtitle: "Applying a Data Science Mindset to Physical Therapy Education"
+author:
+  - Madeline Ratoza, PT, DPT, PhD
+  - Sam Pak, PT, DPT
+  - Peyton D. Sykes, PT, DPT, EdD
+  - Morgan Ascher, PT, DPT
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    toc-title: "In this resource"
+    embed-resources: true
+    code-fold: true
+    code-summary: "View the R code"
+    code-copy: true
+    title-block-banner: "#163b50"
+    title-block-banner-color: "#ffffff"
+    include-in-header:
+      text: |
+        <style>
+        #title-block-header.quarto-title-block .quarto-title-banner {
+          background: #163b50 !important;
+          color: #ffffff !important;
+        }
+        #title-block-header .quarto-title-banner .title,
+        #title-block-header .quarto-title-banner .subtitle,
+        #title-block-header .quarto-title-banner .quarto-title {
+          color: #ffffff !important;
+          opacity: 1 !important;
+        }
+        #title-block-header .quarto-title-meta-heading,
+        #title-block-header .quarto-title-meta-contents,
+        #title-block-header .quarto-title-meta-contents p,
+        #title-block-header .quarto-title-meta-contents a {
+          color: #163b50;
+          opacity: 1;
+        }
+        body {
+          color: #213944;
+          line-height: 1.7;
+        }
+        main h1, main h2, main h3 {
+          color: #163b50;
+        }
+        main h1 {
+          margin-top: 2.5rem;
+        }
+        a {
+          color: #146b74;
+        }
+        table {
+          width: 100%;
+          margin: 1.4rem 0;
+        }
+        thead th {
+          background: #163b50 !important;
+          color: #ffffff !important;
+        }
+        td, th {
+          padding: 0.7rem 0.9rem !important;
+        }
+        tbody tr:nth-child(even) {
+          background: #f2f7f8;
+        }
+        .callout {
+          border-radius: 8px;
+        }
+        @media print {
+          #quarto-margin-sidebar, .code-copy-button {
+            display: none;
+          }
+          h1, h2, h3 {
+            break-after: avoid;
+          }
+          table {
+            break-inside: avoid;
+          }
+        }
+        </style>
+engine: knitr
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+::: {.callout-note}
+## About this resource
+
+This companion resource draws on the ELC 2026 presentation, *From Spreadsheets to Systems*. Use it to examine one recurring educational-data problem, identify an improvement, and plan a small pilot.
+
+The principles apply whether you use spreadsheets, forms, dashboards, or code.
+:::
+
+# Start with a question
+
+Physical therapy programs collect evidence about student success, competency attainment, curricular effectiveness, clinical education, and accreditation. Turning that information into useful evidence requires attention to how it moves through the program and informs decisions.
+
+**Choose one recurring problem:** something that takes too long, gets recreated, depends on one person, or is difficult to answer quickly. Keep that problem in mind as you work through this resource.
+
+## Where does your data live?
+
+Sketch your current process on paper. Include:
+
+- People who contribute, review, or use the information.
+- Systems and files where records live.
+- Handoffs between people or systems.
+- Calculations and reports.
+- Decisions the evidence supports.
+
+Then consider:
+
+- Where do people copy and paste information?
+- Does email carry an approval or review process?
+- Which file is authoritative?
+- Which steps depend on knowledge held by one person?
+- What would happen if that person left?
+
+## Common patterns
+
+| Current pattern | Consequence |
+|---|---|
+| Multiple spreadsheets | Duplicate work and inconsistent records |
+| Manual reporting | Time spent repeating routine preparation |
+| Siloed systems | Limited visibility across the program |
+| Disconnected records | Difficult longitudinal tracking |
+| One-off analyses | Reports that require rebuilding each cycle |
+
+# A data science mindset
+
+A data science mindset helps us consider how information is collected, transformed, interpreted, and used. These principles offer a starting point for improving ordinary academic workflows.
+
+| Principle | A question to ask | A first improvement |
+|---|---|---|
+| **Reproducibility** | Can someone regenerate this answer next term? | Retain the inputs and document the steps. |
+| **Transparency** | Can another person understand how we produced the answer? | Define measures and make formulas and exclusions visible. |
+| **Automation** | Which repeated steps do not require new judgment? | Reuse a query, linked workbook, form, template, or script. |
+| **Version control** | Can we reconstruct what changed and when? | Preserve versions and a change history. |
+| **Data storytelling** | What does this evidence mean for an educational decision? | Explain the context, pattern, and possible action. |
+| **Collaborative workflows** | Can the process continue beyond one person? | Share definitions, responsibilities, and instructions. |
+
+## Reproducibility and transparency
+
+Consider an end-of-term course review.
+
+| Stage | Example |
+|---|---|
+| Question | How did students perform on the course outcomes this term? |
+| Data | Grades and assessment results mapped to those outcomes |
+| Method | Apply a documented mapping and calculation |
+| Answer | Students had the most difficulty with Outcome 3 |
+| Decision | Review the assessment alignment and consider additional practice |
+
+**Reproducibility:** Could another faculty member generate the same report next year using the same inputs and rules?
+
+**Transparency:** Could they tell exactly how “Outcome 3 performance” was calculated?
+
+A reproducible calculation still requires review of whether the measure answers the educational question.
+
+## Automation and version control
+
+Automation reduces repeated work that does not require a new decision. It might involve a reusable spreadsheet template, a form that updates a record, or a script that refreshes a report.
+
+Version control preserves the history of the work. It helps someone identify what changed, when it changed, and which version supported a particular decision.
+
+**Reflection prompts:**
+
+- What are you repeatedly doing by hand?
+- Could you reconstruct what a record or report looked like a year ago?
+- How do you identify the current approved version?
+
+## Data storytelling and collaborative workflows
+
+A percentage becomes more useful when readers understand its denominator, context, and implications.
+
+For example, “First-time pass rate was 87%” may lead to further questions:
+
+- Which students or cohorts experienced difficulty?
+- Has the pattern changed?
+- Are the measures comparable across terms?
+- What response should the program consider?
+
+A shared workflow makes those questions and calculations understandable to others. Documenting the steps helps colleagues participate and sustain the process.
+
+# Governance and ethical use
+
+Every workflow needs clear responsibilities for the records and their use.
+
+| Responsibility | What to clarify |
+|---|---|
+| Ownership | Who is accountable for the dataset and its definitions? |
+| Contributions | Who enters information, and how are errors corrected? |
+| Editing | Who can change records, and how are changes tracked? |
+| Visibility | Who needs identifiable records or summary information? |
+| Review | Who checks the evidence and authorizes action? |
+| Continuity | Who maintains the workflow and provides backup? |
+
+Analytics should support human judgment. Trust, transparency, reliability, and stakeholder participation matter especially when information influences student progression or curricular decisions.
+
+::: {.callout-important}
+## From a pattern to a conversation
+
+A downward GPA trend can prompt a supportive conversation. Interpreting it requires context, including assessment changes and circumstances affecting the student.
+
+An automated flag should initiate review. The pattern alone does not explain its cause or determine an appropriate response.
+:::
+
+Before acting, ask:
+
+- Is the information accurate and complete?
+- Are the measures comparable?
+- Could missing records or inconsistent definitions affect groups differently?
+- Who should help interpret the result?
+- How can someone question or correct the evidence?
+
+# Familiar applications
+
+## Preserve the student story
+
+A current GPA of 2.8 provides a snapshot. A sequence of 3.6, 3.4, 3.1, and 2.8 reveals a pattern that may warrant earlier inquiry.
+
+Preserving history makes it possible to ask when performance began to change and whether support could have started sooner.
+
+**Consider:** Which records currently overwrite information that would help you understand change over time?
+
+## Refresh a recurring report
+
+Annual reporting often repeats the same downloads, cleaning, calculations, charts, and copying.
+
+Define those steps once and reuse them with the next dataset. Review data quality and interpretation each cycle.
+
+**Consider:** Which part of your next report could be refreshed through an established process?
+
+## Maintain a curriculum map
+
+Treat curriculum mapping as information maintained when courses change. Questions such as “Where is pain management taught, how often, and at what level?” can then draw on an existing resource.
+
+**Consider:** Who records course changes, and how does that update reach the curriculum map?
+
+## Share the process
+
+Document which file to use, what each field means, and which checks occur before reporting.
+
+A colleague should be able to understand and participate in the work without reconstructing its logic.
+
+**Consider:** What recurring task currently depends on one person's memory?
+
+## Make evidence production visible to students
+
+Alongside interpreting an article's findings, ask students where the data came from, which choices shaped the analysis, and what someone would need to reproduce it.
+
+**Consider:** Where could your course make the production of evidence more visible?
+
+# A small demonstration in R
+
+This resource combines explanatory text with executable R code. Quarto runs the code and assembles its results into the HTML document.
+
+Changing the inputs and rendering again updates the report through the same documented process.
+
+::: {.callout-note}
+## Fictional example
+
+All student records below are fictional. This example demonstrates a reporting workflow rather than findings from a DPT program.
+
+The calculation uses base R. The table uses the `knitr` package.
+:::
+
+## Define the data and the rule
+
+In this example, “met benchmark” means a course-outcome score of at least 70.
+
+A real program would define and justify its own measure, including the assessment mapping and treatment of missing data.
+
+```{r}
+#| label: define-example
+
+benchmark <- 70
+
+results <- data.frame(
+  student_id = rep(sprintf("S%02d", 1:8), times = 3),
+  outcome = rep(
+    c("Outcome 1", "Outcome 2", "Outcome 3"),
+    each = 8
+  ),
+  score = c(
+    82, 76, 91, 68, 74, 88, 79, 72,
+    77, 65, 84, 71, 69, 80, 73, 75,
+    66, 72, 58, 75, 63, 81, 69, 64
+  )
+)
+
+# Check for duplicate student-outcome records and invalid scores.
+stopifnot(
+  !anyDuplicated(results[c("student_id", "outcome")]),
+  is.numeric(results$score),
+  all(
+    is.na(results$score) |
+      (results$score >= 0 & results$score <= 100)
+  )
+)
+
+results$met_benchmark <- ifelse(
+  is.na(results$score),
+  NA,
+  results$score >= benchmark
+)
+```
+
+## Make the denominator visible
+
+Missing scores are excluded from the assessed denominator and counted separately. This makes the rule visible and avoids treating missing values as failures.
+
+```{r}
+#| label: outcome-summary
+
+summary_table <- do.call(
+  rbind,
+  lapply(split(results, results$outcome), function(x) {
+
+    assessed <- sum(!is.na(x$score))
+    met <- sum(x$met_benchmark, na.rm = TRUE)
+
+    data.frame(
+      Outcome = x$outcome[1],
+      Assessed = assessed,
+      Missing = sum(is.na(x$score)),
+      Met = met,
+      Percent = if (assessed > 0) {
+        100 * met / assessed
+      } else {
+        NA_real_
+      }
+    )
+  })
+)
+
+rownames(summary_table) <- NULL
+
+knitr::kable(
+  summary_table,
+  digits = 1,
+  col.names = c(
+    "Outcome",
+    "Assessed",
+    "Missing",
+    "Met benchmark",
+    "% met"
+  )
+)
+```
+
+## Visualize the result
+
+```{r}
+#| label: outcome-chart
+#| fig-cap: "Fictional example: percentage of assessed students meeting the selected benchmark."
+#| fig-width: 7
+#| fig-height: 3.8
+#| fig-alt: "Horizontal bar chart comparing benchmark attainment across three fictional course outcomes."
+
+par(mar = c(4, 7, 1, 1))
+
+barplot(
+  summary_table$Percent,
+  names.arg = summary_table$Outcome,
+  horiz = TRUE,
+  las = 1,
+  xlim = c(0, 100),
+  col = "#197c86",
+  border = NA,
+  xlab = "Assessed students meeting benchmark (%)"
+)
+```
+
+## Connect the result to a next step
+
+```{r}
+#| label: interpret-example
+#| echo: false
+#| results: asis
+
+valid <- summary_table[!is.na(summary_table$Percent), ]
+
+if (nrow(valid) > 0) {
+  lowest <- valid[
+    valid$Percent == min(valid$Percent),
+    ,
+    drop = FALSE
+  ]
+
+  outcome_names <- paste(lowest$Outcome, collapse = " and ")
+
+  cat(
+    sprintf(
+      "**%s** had the lowest benchmark attainment in this fictional dataset: **%.1f%%** of assessed students met the benchmark of **%g**.\n\n",
+      outcome_names,
+      lowest$Percent[1],
+      benchmark
+    )
+  )
+} else {
+  cat("No assessed scores are available for interpretation.\n\n")
+}
+```
+
+A course team could review the outcome mapping, assessment items, and learning opportunities before selecting a response. The calculation alone cannot establish why students struggled.
+
+**Try it:** Change `benchmark <- 70` to another value and render again. The table, chart, and result statement update from the same calculation.
+
+Changing the rule also changes the meaning of the result. Document why you changed it and avoid comparing reports that use different definitions without explaining the difference.
+
+# Redesign one process
+
+Choose a familiar workflow, such as:
+
+- Progression review.
+- Course assessment reporting.
+- Admissions evaluation.
+- Curriculum mapping.
+- Clinical education placement.
+- Accreditation evidence.
+
+Then:
+
+1. Map the current process.
+2. Mark duplicate entries, unclear ownership, hidden calculations, bias risks, and missing version history.
+3. Choose one principle and one feasible improvement.
+4. Identify how you will judge its impact.
+
+## Process redesign worksheet
+
+Copy this table into your planning document, or print the page and write in the blank column.
+
+| Prompt | Your notes |
+|---|---|
+| Process to improve | ______________________________ |
+| Current pain point | ______________________________ |
+| Principle to apply | ______________________________ |
+| First improvement | ______________________________ |
+| Evidence of impact | ______________________________ |
+
+## Implementation concept
+
+| Prompt | Your notes |
+|---|---|
+| Institutional challenge | ______________________________ |
+| Tools or skills needed | ______________________________ |
+| Campus partner or resource | ______________________________ |
+| Person responsible for the pilot | ______________________________ |
+| First milestone and date | ______________________________ |
+| How impact will be assessed | ______________________________ |
+
+Potential partners include assessment staff, program leadership, faculty, students, IT, institutional research, and clinical education.
+
+Match participation to the workflow and to the decisions it supports.
+
+## Evaluate the improvement
+
+Possible measures include:
+
+- Time spent preparing a report.
+- Frequency of duplicate entries.
+- Number of corrections required.
+- Ability of a colleague to repeat the workflow.
+- Time from identifying a concern to reviewing it.
+
+Establish a baseline before the pilot. Afterward, assess whether the change improved the work and what still needs attention.
+
+# How this resource demonstrates the principles
+
+| Principle | How it appears in this resource |
+|---|---|
+| Reproducibility | The source contains the example data and calculation rules. |
+| Transparency | Readers can expand the R code and inspect the method. |
+| Automation | Rendering regenerates the table, chart, and result statement. |
+| Version control | The `.qmd` can be tracked in a Git repository. |
+| Data storytelling | The calculated result appears alongside context and a possible next step. |
+| Collaborative workflows | Colleagues can review and edit the same documented source. |
+
+
+# References from the presentation
+
+These entries retain the reading list supplied in the presentation. Bibliographic details have not been independently verified for this adaptation.
+
+1. Shorten G. Learning analytics and the future of postgraduate medical training. *Ir J Med Sci.* 2024;193(5):2607-2609.
+
+2. Blease C, Kharko A, Bernstein M, et al. Machine learning in medical education: a survey of the experiences and opinions of medical students in Ireland. *BMJ Health Care Inform.* 2022;29(1):e100480.
+
+3. Carney PA, Sebok-Syer SS, Pusic MV, Gillespie CC, Westervelt M, Goldhamer MEJ. Using learning analytics in clinical competency committees: Increasing the impact of competency-based medical education. *Med Educ Online.* 2023;28(1):2178913.
+
+4. Bojic I, Mammadova M, Ang CS, et al. Empowering health care education through learning analytics: In-depth scoping review. *J Med Internet Res.* 2023;25:e41671.
+
+5. Romero C, Ventura S. Educational data mining and learning analytics: An updated survey. arXiv. Published online February 10, 2024. doi:10.48550/arXiv.2402.07956.
+
+6. Alfredo R, Echeverria V, Jin Y, et al. Human-centred Learning Analytics and AI in Education: A systematic literature review. arXiv. Published online December 20, 2023. doi:10.48550/arXiv.2312.12751.
+
+7. Marcotte K, Yang P, Millis MA, et al. Ethical considerations of using learning analytics in medical education: a critical review. *Adv Health Sci Educ Theory Pract.* 2025;30(1):87-101. doi:10.1007/s10459-024-10402-7.
