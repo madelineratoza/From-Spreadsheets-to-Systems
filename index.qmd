@@ -1,6 +1,6 @@
 ---
 title: "From Spreadsheets to Systems"
-subtitle: "Applying a Data Science Mindset to Physical Therapy Education"
+subtitle: "A companion resource to the worksheet provided at ELC 2026"
 author:
   - Madeline Ratoza, PT, DPT, PhD
   - Sam Pak, PT, DPT
@@ -11,7 +11,7 @@ format:
     theme: cosmo
     toc: true
     toc-depth: 2
-    toc-title: "In this resource"
+    toc-title: "Explore this resource"
     embed-resources: true
     code-fold: true
     code-summary: "View the R code"
@@ -21,22 +21,14 @@ format:
     include-in-header:
       text: |
         <style>
-        #title-block-header.quarto-title-block .quarto-title-banner {
+        #title-block-header .quarto-title-banner {
           background: #163b50 !important;
           color: #ffffff !important;
         }
         #title-block-header .quarto-title-banner .title,
-        #title-block-header .quarto-title-banner .subtitle,
-        #title-block-header .quarto-title-banner .quarto-title {
+        #title-block-header .quarto-title-banner .subtitle {
           color: #ffffff !important;
           opacity: 1 !important;
-        }
-        #title-block-header .quarto-title-meta-heading,
-        #title-block-header .quarto-title-meta-contents,
-        #title-block-header .quarto-title-meta-contents p,
-        #title-block-header .quarto-title-meta-contents a {
-          color: #163b50;
-          opacity: 1;
         }
         body {
           color: #213944;
@@ -65,8 +57,17 @@ format:
         tbody tr:nth-child(even) {
           background: #f2f7f8;
         }
-        .callout {
+        details {
+          margin: 1.5rem 0;
+          padding: 1rem 1.2rem;
+          border: 1px solid #cbdde1;
           border-radius: 8px;
+          background: #f7fafb;
+        }
+        summary {
+          color: #163b50;
+          font-weight: 600;
+          cursor: pointer;
         }
         @media print {
           #quarto-margin-sidebar, .code-copy-button {
@@ -74,9 +75,6 @@ format:
           }
           h1, h2, h3 {
             break-after: avoid;
-          }
-          table {
-            break-inside: avoid;
           }
         }
         </style>
@@ -88,402 +86,326 @@ execute:
 ---
 
 ::: {.callout-note}
-## About this resource
+## Welcome back to your worksheet
 
-This companion resource draws on the ELC 2026 presentation, *From Spreadsheets to Systems*. Use it to examine one recurring educational-data problem, identify an improvement, and plan a small pilot.
+You identified a recurring educational-data problem and a small change you could test. This companion resource helps you turn those ideas into a pilot plan.
 
-The principles apply whether you use spreadsheets, forms, dashboards, or code.
+Start with your worksheet. Use the sections below to clarify your approach, involve the right people, and decide what evidence would justify continuing.
 :::
 
-# Start with a question
+# Turn your worksheet into a pilot
 
-Physical therapy programs collect evidence about student success, competency attainment, curricular effectiveness, clinical education, and accreditation. Turning that information into useful evidence requires attention to how it moves through the program and informs decisions.
+A useful first test is small enough to complete and specific enough to learn from. Choose one course, cohort, report, or review cycle.
 
-**Choose one recurring problem:** something that takes too long, gets recreated, depends on one person, or is difficult to answer quickly. Keep that problem in mind as you work through this resource.
+## 1. Define the process
 
-## Where does your data live?
+Name the recurring work and its boundaries.
 
-Sketch your current process on paper. Include:
+“Improve student-success data” is broad. “Prepare the first-term progression review for one cohort” identifies work you can map and test.
 
-- People who contribute, review, or use the information.
-- Systems and files where records live.
-- Handoffs between people or systems.
-- Calculations and reports.
-- Decisions the evidence supports.
+**Write down:**
 
-Then consider:
+- What starts the process?
+- What output or decision marks its end?
+- Who contributes information or uses the result?
+- Which part will your pilot address?
 
-- Where do people copy and paste information?
-- Does email carry an approval or review process?
-- Which file is authoritative?
-- Which steps depend on knowledge held by one person?
-- What would happen if that person left?
+## 2. Make the aim measurable
 
-## Common patterns
+Use the worksheet’s structure:
 
-| Current pattern | Consequence |
+> By **[date]**, improve **[measure]** from **[baseline]** to **[target]**.
+
+For example:
+
+> Within 30 days, reduce preparation time for one course-outcome report from 90 minutes to 45 minutes, while maintaining agreement with the checked calculations.
+
+If you do not know the baseline, measuring the current process can be your first step. Avoid choosing a target before understanding the work.
+
+## 3. Locate the pain point
+
+Identify the exact step, file, or handoff causing difficulty.
+
+| Broad concern | A more specific pain point |
 |---|---|
-| Multiple spreadsheets | Duplicate work and inconsistent records |
-| Manual reporting | Time spent repeating routine preparation |
-| Siloed systems | Limited visibility across the program |
-| Disconnected records | Difficult longitudinal tracking |
-| One-off analyses | Reports that require rebuilding each cycle |
+| Reporting takes too long | Someone manually retypes assessment results into a second workbook. |
+| Records are inconsistent | Two files use different definitions of the same outcome. |
+| Ownership is unclear | No one is responsible for updating the curriculum map after a course change. |
+| The process is fragile | One faculty member knows which records to exclude, but the rule is undocumented. |
+| Decisions are difficult to explain | A summary percentage omits its denominator and calculation rule. |
 
-# A data science mindset
+Specificity helps you choose an improvement that addresses the problem.
 
-A data science mindset helps us consider how information is collected, transformed, interpreted, and used. These principles offer a starting point for improving ordinary academic workflows.
+## 4. Select one principle
 
-| Principle | A question to ask | A first improvement |
+Choose the principle most closely connected to the pain point. Several may matter, but one can guide the first test.
+
+| Principle | Question to ask | Possible first improvement |
 |---|---|---|
-| **Reproducibility** | Can someone regenerate this answer next term? | Retain the inputs and document the steps. |
+| **Reproducibility** | Can someone regenerate this answer next term? | Keep the inputs and document the steps. |
 | **Transparency** | Can another person understand how we produced the answer? | Define measures and make formulas and exclusions visible. |
 | **Automation** | Which repeated steps do not require new judgment? | Reuse a query, linked workbook, form, template, or script. |
-| **Version control** | Can we reconstruct what changed and when? | Preserve versions and a change history. |
+| **Version control** | Can we reconstruct what changed and when? | Keep versions and a change history. |
 | **Data storytelling** | What does this evidence mean for an educational decision? | Explain the context, pattern, and possible action. |
 | **Collaborative workflows** | Can the process continue beyond one person? | Share definitions, responsibilities, and instructions. |
 
-## Reproducibility and transparency
+## 5. Design the first small test
 
-Consider an end-of-term course review.
+Describe what you will change, who will participate, and what you will retain for comparison.
 
-| Stage | Example |
-|---|---|
-| Question | How did students perform on the course outcomes this term? |
-| Data | Grades and assessment results mapped to those outcomes |
-| Method | Apply a documented mapping and calculation |
-| Answer | Students had the most difficulty with Outcome 3 |
-| Decision | Review the assessment alignment and consider additional practice |
+For example:
 
-**Reproducibility:** Could another faculty member generate the same report next year using the same inputs and rules?
+> For one course report, replace manual re-entry with a reusable import process. Compare the resulting report with a checked report from the same input data.
 
-**Transparency:** Could they tell exactly how “Outcome 3 performance” was calculated?
+A test can begin with a documented checklist or shared definition. It does not require a new software platform.
 
-A reproducible calculation still requires review of whether the measure answers the educational question.
+## 6. Choose evidence of impact
 
-## Automation and version control
+Identify **one number to track** and **one thing that must not get worse**.
 
-Automation reduces repeated work that does not require a new decision. It might involve a reusable spreadsheet template, a form that updates a record, or a script that refreshes a report.
+| Improvement you want | Number to track | What must not get worse |
+|---|---|---|
+| Less repeated work | Minutes required to prepare the report | Accuracy of the calculations |
+| More consistent records | Number of discrepancies between records | Time required for faculty to submit information |
+| A process others can run | Steps completed independently by a colleague | Appropriate access to sensitive information |
+| Faster review | Days from submission to review | Completeness of the review |
+| Clearer reporting | Readers correctly interpreting a measure | Visibility of uncertainty and limitations |
 
-Version control preserves the history of the work. It helps someone identify what changed, when it changed, and which version supported a particular decision.
+Set the definitions before the pilot so that the comparison means what you intend.
 
-**Reflection prompts:**
+# Choose an approach that fits
 
-- What are you repeatedly doing by hand?
-- Could you reconstruct what a record or report looked like a year ago?
-- How do you identify the current approved version?
+Coding is one way to put data science principles into practice. It can make preparation and analysis steps explicit and repeatable. The same principles can also guide work in spreadsheets, shared records, visual tools, and documented processes.
 
-## Data storytelling and collaborative workflows
+Start with the educational question and the workflow. Then choose an approach that your team can maintain.
 
-A percentage becomes more useful when readers understand its denominator, context, and implications.
+| Approach | What it can support | Example |
+|---|---|---|
+| **Structured spreadsheets** | Consistent fields, visible calculations, and reusable summaries | A course-report template with validation and documented formulas |
+| **Forms and shared records** | Consistent collection and an authoritative record | A form that collects required information into a shared record |
+| **Saved queries and visual data preparation** | Repeatable importing, cleaning, and combining | Refreshing a saved preparation process with the next term’s data |
+| **Dashboards** | Repeated access to defined measures and relevant comparisons | A report showing trends by cohort with visible denominators |
+| **Workflow automation** | Routine routing, reminders, and status updates | A submission that initiates a review notification |
+| **R or Python scripts** | Explicit, reusable preparation and analysis steps | A script that generates the same report from updated inputs |
+| **Process documentation** | Shared definitions, roles, and checks | Instructions that let a colleague repeat a review process |
 
-For example, “First-time pass rate was 87%” may lead to further questions:
-
-- Which students or cohorts experienced difficulty?
-- Has the pattern changed?
-- Are the measures comparable across terms?
-- What response should the program consider?
-
-A shared workflow makes those questions and calculations understandable to others. Documenting the steps helps colleagues participate and sustain the process.
-
-# Governance and ethical use
-
-Every workflow needs clear responsibilities for the records and their use.
-
-| Responsibility | What to clarify |
-|---|---|
-| Ownership | Who is accountable for the dataset and its definitions? |
-| Contributions | Who enters information, and how are errors corrected? |
-| Editing | Who can change records, and how are changes tracked? |
-| Visibility | Who needs identifiable records or summary information? |
-| Review | Who checks the evidence and authorizes action? |
-| Continuity | Who maintains the workflow and provides backup? |
-
-Analytics should support human judgment. Trust, transparency, reliability, and stakeholder participation matter especially when information influences student progression or curricular decisions.
+These approaches can be combined. A form might collect records, a saved query might prepare them, and a dashboard might present the results.
 
 ::: {.callout-important}
-## From a pattern to a conversation
+## The tool does not establish the quality of the process
 
-A downward GPA trend can prompt a supportive conversation. Interpreting it requires context, including assessment changes and circumstances affecting the student.
+A spreadsheet can contain transparent, reproducible work. A sophisticated dashboard can contain unclear definitions or unreliable inputs.
 
-An automated flag should initiate review. The pattern alone does not explain its cause or determine an appropriate response.
+Evaluate the definitions, checks, responsibilities, and interpretation alongside the technology.
 :::
 
-Before acting, ask:
+## Questions to guide your choice
 
-- Is the information accurate and complete?
-- Are the measures comparable?
-- Could missing records or inconsistent definitions affect groups differently?
-- Who should help interpret the result?
-- How can someone question or correct the evidence?
+- Can your current tools support the small test?
+- Who will maintain the approach?
+- Can a colleague understand and repeat the work?
+- Does the approach preserve the history you need?
+- Can it provide appropriate access and protect sensitive records?
+- Does it reduce work overall, including work shifted to other people?
 
-# Familiar applications
+# Check the evidence before acting
 
-## Preserve the student story
+The worksheet offers three checks. Use them when designing the pilot and interpreting its results.
 
-A current GPA of 2.8 provides a snapshot. A sequence of 3.6, 3.4, 3.1, and 2.8 reveals a pattern that may warrant earlier inquiry.
+## What kind of question is this?
 
-Preserving history makes it possible to ask when performance began to change and whether support could have started sooner.
+| Question type | Example | Interpretation |
+|---|---|---|
+| **Describing** | What percentage met the benchmark this term? | Summarizes the observed records. |
+| **Predicting** | Which students may need additional support next term? | Requires evidence that the prediction performs adequately for its intended use. |
+| **Explaining why** | Did a curriculum change cause an improvement? | Requires a design and analysis capable of addressing alternative explanations. |
 
-**Consider:** Which records currently overwrite information that would help you understand change over time?
+A pattern or association can suggest a question to investigate. It does not establish a cause by itself.
 
-## Refresh a recurring report
+## Does the measure mean what we think?
 
-Annual reporting often repeats the same downloads, cleaning, calculations, charts, and copying.
+Document:
 
-Define those steps once and reuse them with the next dataset. Review data quality and interpretation each cycle.
+- What the measure represents.
+- Its calculation and denominator.
+- How missing records are handled.
+- Whether definitions are consistent across terms.
+- What the measure leaves out.
 
-**Consider:** Which part of your next report could be refreshed through an established process?
+A precisely calculated measure can still be a poor representation of the educational outcome you care about.
 
-## Maintain a curriculum map
+## Could this be noise?
 
-Treat curriculum mapping as information maintained when courses change. Questions such as “Where is pain management taught, how often, and at what level?” can then draw on an existing resource.
+Consider the number of students and the number of observations over time.
 
-**Consider:** Who records course changes, and how does that update reach the curriculum map?
+With small cohorts, a few students can produce a substantial percentage change. Look at counts alongside percentages and examine several time points when possible.
 
-## Share the process
+For a small workflow pilot, a faster report on one attempt is encouraging. Repeat testing can help determine whether the improvement is sustainable.
 
-Document which file to use, what each field means, and which checks occur before reporting.
+# Establish the two guardrails
 
-A colleague should be able to understand and participate in the work without reconstructing its logic.
+## Governance
 
-**Consider:** What recurring task currently depends on one person's memory?
+Clarify responsibilities before using the revised process.
 
-## Make evidence production visible to students
+| Responsibility | Question |
+|---|---|
+| Ownership | Who is accountable for the records and definitions? |
+| Entry | Who contributes information and corrects errors? |
+| Editing | Who can change records, and how are changes tracked? |
+| Visibility | Who needs individual records or summary information? |
+| Review | Who checks the evidence and authorizes action? |
+| Continuity | Who keeps the process running when someone leaves? |
 
-Alongside interpreting an article's findings, ask students where the data came from, which choices shaped the analysis, and what someone would need to reproduce it.
+## Human-centered and ethical use
 
-**Consider:** Where could your course make the production of evidence more visible?
+Consider how the process affects the people represented in the data and the people doing the work.
 
-# A small demonstration in R
+- Could missing information or inconsistent definitions affect some students differently?
+- Can students or faculty question and correct relevant records?
+- Does the output communicate limitations?
+- Does a flag initiate a conversation and contextual review?
+- Does the improvement create additional burden elsewhere?
 
-This resource combines explanatory text with executable R code. Quarto runs the code and assembles its results into the HTML document.
+For example, a downward GPA trend can prompt a supportive conversation. Interpreting it requires context. The trend alone should not determine a progression decision.
 
-Changing the inputs and rendering again updates the report through the same documented process.
+# Put your pilot plan on one page
 
-::: {.callout-note}
-## Fictional example
+Copy this table into a document and complete it with the people who will participate.
 
-All student records below are fictional. This example demonstrates a reporting workflow rather than findings from a DPT program.
+| Planning item | Your response |
+|---|---|
+| Process and boundaries | |
+| Educational or institutional challenge | |
+| Aim, including date, baseline, and target | |
+| Exact pain point | |
+| Principle guiding the test | |
+| First small change | |
+| Course, cohort, or cycle included | |
+| Person responsible | |
+| Partners and resources needed | |
+| Tools or skills needed | |
+| Improvement measure | |
+| What must not get worse | |
+| Data definitions and quality checks | |
+| Access, review, and correction responsibilities | |
+| Test date and review date | |
+| Decision after review | |
 
-The calculation uses base R. The table uses the `knitr` package.
-:::
+## A practical sequence
 
-## Define the data and the rule
+| When | Focus |
+|---|---|
+| Before the test | Confirm the aim, baseline, definitions, participants, and guardrails. |
+| During the test | Record time, discrepancies, questions, and unexpected work. |
+| At the review | Compare results with the aim and check what must not get worse. |
+| After the review | Continue, revise, or stop the change. Document why. |
 
-In this example, “met benchmark” means a course-outcome score of at least 70.
+Match the timeline to the work. A process that occurs once per term may need a historical dataset or a limited trial before the next full cycle.
 
-A real program would define and justify its own measure, including the assessment mapping and treatment of missing data.
+# Learn from the test
+
+Use the review to answer:
+
+1. Did the process improve in the way we intended?
+2. Did accuracy, access, workload, or another protected condition worsen?
+3. Could another person complete the process?
+4. Which problems remained?
+5. What evidence would justify expanding the change?
+
+| Decision | When it may fit |
+|---|---|
+| **Continue** | The test met its aim without worsening the protected condition. |
+| **Revise and retest** | The approach helped, but a definition, step, or responsibility needs adjustment. |
+| **Stop or change direction** | The approach introduced unacceptable problems or did not address the pain point. |
+
+Keep a short record of what changed, what you learned, and the next decision. That history is part of making the improvement sustainable.
+
+# Explore how this resource was built
+
+This companion resource was written in Quarto, which combines document text with optional executable code. Its source is maintained in a GitHub repository.
+
+Using a document source supports review and revision. When calculations are included, rendering can regenerate their results alongside the explanation.
+
+[View the source repository](https://github.com/madelineratoza/From-Spreadsheets-to-Systems)
+
+<details>
+<summary>Optional: see a small example of reporting with R</summary>
+
+## A reusable calculation
+
+The fictional records below represent how long five reports took to prepare before and during a pilot.
+
+The example demonstrates how a calculation and its result statement can stay together. It does not establish that an improvement would occur in another program.
 
 ```{r}
-#| label: define-example
+#| label: optional-pilot-example
 
-benchmark <- 70
-
-results <- data.frame(
-  student_id = rep(sprintf("S%02d", 1:8), times = 3),
-  outcome = rep(
-    c("Outcome 1", "Outcome 2", "Outcome 3"),
-    each = 8
-  ),
-  score = c(
-    82, 76, 91, 68, 74, 88, 79, 72,
-    77, 65, 84, 71, 69, 80, 73, 75,
-    66, 72, 58, 75, 63, 81, 69, 64
-  )
+pilot <- data.frame(
+  report = paste("Report", 1:5),
+  before_minutes = c(90, 85, 95, 80, 100),
+  pilot_minutes = c(45, 50, 40, 45, 55)
 )
 
-# Check for duplicate student-outcome records and invalid scores.
+# Check the basic input structure.
 stopifnot(
-  !anyDuplicated(results[c("student_id", "outcome")]),
-  is.numeric(results$score),
-  all(
-    is.na(results$score) |
-      (results$score >= 0 & results$score <= 100)
-  )
+  !anyDuplicated(pilot$report),
+  all(is.finite(pilot$before_minutes)),
+  all(is.finite(pilot$pilot_minutes)),
+  all(pilot$before_minutes > 0),
+  all(pilot$pilot_minutes >= 0)
 )
 
-results$met_benchmark <- ifelse(
-  is.na(results$score),
-  NA,
-  results$score >= benchmark
-)
-```
-
-## Make the denominator visible
-
-Missing scores are excluded from the assessed denominator and counted separately. This makes the rule visible and avoids treating missing values as failures.
-
-```{r}
-#| label: outcome-summary
-
-summary_table <- do.call(
-  rbind,
-  lapply(split(results, results$outcome), function(x) {
-
-    assessed <- sum(!is.na(x$score))
-    met <- sum(x$met_benchmark, na.rm = TRUE)
-
-    data.frame(
-      Outcome = x$outcome[1],
-      Assessed = assessed,
-      Missing = sum(is.na(x$score)),
-      Met = met,
-      Percent = if (assessed > 0) {
-        100 * met / assessed
-      } else {
-        NA_real_
-      }
-    )
-  })
-)
-
-rownames(summary_table) <- NULL
+mean_before <- mean(pilot$before_minutes)
+mean_pilot <- mean(pilot$pilot_minutes)
+minutes_saved <- mean_before - mean_pilot
+percent_reduction <- 100 * minutes_saved / mean_before
 
 knitr::kable(
-  summary_table,
-  digits = 1,
+  pilot,
   col.names = c(
-    "Outcome",
-    "Assessed",
-    "Missing",
-    "Met benchmark",
-    "% met"
+    "Fictional report",
+    "Before: minutes",
+    "Pilot: minutes"
   )
 )
 ```
 
-## Visualize the result
-
 ```{r}
-#| label: outcome-chart
-#| fig-cap: "Fictional example: percentage of assessed students meeting the selected benchmark."
-#| fig-width: 7
-#| fig-height: 3.8
-#| fig-alt: "Horizontal bar chart comparing benchmark attainment across three fictional course outcomes."
-
-par(mar = c(4, 7, 1, 1))
-
-barplot(
-  summary_table$Percent,
-  names.arg = summary_table$Outcome,
-  horiz = TRUE,
-  las = 1,
-  xlim = c(0, 100),
-  col = "#197c86",
-  border = NA,
-  xlab = "Assessed students meeting benchmark (%)"
-)
-```
-
-## Connect the result to a next step
-
-```{r}
-#| label: interpret-example
+#| label: optional-pilot-result
 #| echo: false
 #| results: asis
 
-valid <- summary_table[!is.na(summary_table$Percent), ]
-
-if (nrow(valid) > 0) {
-  lowest <- valid[
-    valid$Percent == min(valid$Percent),
-    ,
-    drop = FALSE
-  ]
-
-  outcome_names <- paste(lowest$Outcome, collapse = " and ")
-
-  cat(
-    sprintf(
-      "**%s** had the lowest benchmark attainment in this fictional dataset: **%.1f%%** of assessed students met the benchmark of **%g**.\n\n",
-      outcome_names,
-      lowest$Percent[1],
-      benchmark
-    )
-  )
-} else {
-  cat("No assessed scores are available for interpretation.\n\n")
-}
+cat(sprintf(
+  paste0(
+    "In this fictional example, average preparation time changed ",
+    "from **%.1f minutes** to **%.1f minutes**, ",
+    "a reduction of **%.1f minutes (%.1f%%)**.\n\n"
+  ),
+  mean_before,
+  mean_pilot,
+  minutes_saved,
+  percent_reduction
+))
 ```
 
-A course team could review the outcome mapping, assessment items, and learning opportunities before selecting a response. The calculation alone cannot establish why students struggled.
+A team would also need to verify calculation accuracy and check whether work shifted to someone else. These preparation times alone cannot show that every part of the workflow improved.
 
-**Try it:** Change `benchmark <- 70` to another value and render again. The table, chart, and result statement update from the same calculation.
+Change the fictional times and render again to update the table and result statement.
 
-Changing the rule also changes the meaning of the result. Document why you changed it and avoid comparing reports that use different definitions without explaining the difference.
+## What makes this useful?
 
-# Redesign one process
+The inputs, calculation, and explanation are kept in the same source. Another person can inspect the rules and rerun the example.
 
-Choose a familiar workflow, such as:
+A spreadsheet with documented formulas could support a similar small test. Code becomes useful when it fits the task, the team’s skills, and the need for repeated work.
 
-- Progression review.
-- Course assessment reporting.
-- Admissions evaluation.
-- Curriculum mapping.
-- Clinical education placement.
-- Accreditation evidence.
+</details>
 
-Then:
+# Further reading
 
-1. Map the current process.
-2. Mark duplicate entries, unclear ownership, hidden calculations, bias risks, and missing version history.
-3. Choose one principle and one feasible improvement.
-4. Identify how you will judge its impact.
+The presentation draws on scholarship about learning analytics, educational data mining, and ethical use of educational data.
 
-## Process redesign worksheet
-
-Copy this table into your planning document, or print the page and write in the blank column.
-
-| Prompt | Your notes |
-|---|---|
-| Process to improve | ______________________________ |
-| Current pain point | ______________________________ |
-| Principle to apply | ______________________________ |
-| First improvement | ______________________________ |
-| Evidence of impact | ______________________________ |
-
-## Implementation concept
-
-| Prompt | Your notes |
-|---|---|
-| Institutional challenge | ______________________________ |
-| Tools or skills needed | ______________________________ |
-| Campus partner or resource | ______________________________ |
-| Person responsible for the pilot | ______________________________ |
-| First milestone and date | ______________________________ |
-| How impact will be assessed | ______________________________ |
-
-Potential partners include assessment staff, program leadership, faculty, students, IT, institutional research, and clinical education.
-
-Match participation to the workflow and to the decisions it supports.
-
-## Evaluate the improvement
-
-Possible measures include:
-
-- Time spent preparing a report.
-- Frequency of duplicate entries.
-- Number of corrections required.
-- Ability of a colleague to repeat the workflow.
-- Time from identifying a concern to reviewing it.
-
-Establish a baseline before the pilot. Afterward, assess whether the change improved the work and what still needs attention.
-
-# How this resource demonstrates the principles
-
-| Principle | How it appears in this resource |
-|---|---|
-| Reproducibility | The source contains the example data and calculation rules. |
-| Transparency | Readers can expand the R code and inspect the method. |
-| Automation | Rendering regenerates the table, chart, and result statement. |
-| Version control | The `.qmd` can be tracked in a Git repository. |
-| Data storytelling | The calculated result appears alongside context and a possible next step. |
-| Collaborative workflows | Colleagues can review and edit the same documented source. |
-
-
-# References from the presentation
-
-These entries retain the reading list supplied in the presentation. Bibliographic details have not been independently verified for this adaptation.
+The entries below retain the presentation’s reading list. Bibliographic details should be verified before reuse in a publication.
 
 1. Shorten G. Learning analytics and the future of postgraduate medical training. *Ir J Med Sci.* 2024;193(5):2607-2609.
 

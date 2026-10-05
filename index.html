@@ -2215,22 +2215,14 @@ background: #163b50;
 }
 </style>
 <style>
-#title-block-header.quarto-title-block .quarto-title-banner {
+#title-block-header .quarto-title-banner {
 background: #163b50 !important;
 color: #ffffff !important;
 }
 #title-block-header .quarto-title-banner .title,
-#title-block-header .quarto-title-banner .subtitle,
-#title-block-header .quarto-title-banner .quarto-title {
+#title-block-header .quarto-title-banner .subtitle {
 color: #ffffff !important;
 opacity: 1 !important;
-}
-#title-block-header .quarto-title-meta-heading,
-#title-block-header .quarto-title-meta-contents,
-#title-block-header .quarto-title-meta-contents p,
-#title-block-header .quarto-title-meta-contents a {
-color: #163b50;
-opacity: 1;
 }
 body {
 color: #213944;
@@ -2259,8 +2251,17 @@ padding: 0.7rem 0.9rem !important;
 tbody tr:nth-child(even) {
 background: #f2f7f8;
 }
-.callout {
+details {
+margin: 1.5rem 0;
+padding: 1rem 1.2rem;
+border: 1px solid #cbdde1;
 border-radius: 8px;
+background: #f7fafb;
+}
+summary {
+color: #163b50;
+font-weight: 600;
+cursor: pointer;
 }
 @media print {
 #quarto-margin-sidebar, .code-copy-button {
@@ -2268,9 +2269,6 @@ display: none;
 }
 h1, h2, h3 {
 break-after: avoid;
-}
-table {
-break-inside: avoid;
 }
 }
 </style>
@@ -2284,7 +2282,7 @@ break-inside: avoid;
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">From Spreadsheets to Systems</h1>
-            <p class="subtitle lead">Applying a Data Science Mindset to Physical Therapy Education</p>
+            <p class="subtitle lead">A companion resource to the worksheet provided at ELC 2026</p>
                       </div>
   </div>
     
@@ -2309,44 +2307,44 @@ break-inside: avoid;
   </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">In this resource</h2>
+    <h2 id="toc-title">Explore this resource</h2>
    
   <ul class="collapse">
-  <li><a href="#start-with-a-question" id="toc-start-with-a-question" class="nav-link active" data-scroll-target="#start-with-a-question">Start with a question</a>
+  <li><a href="#turn-your-worksheet-into-a-pilot" id="toc-turn-your-worksheet-into-a-pilot" class="nav-link active" data-scroll-target="#turn-your-worksheet-into-a-pilot">Turn your worksheet into a pilot</a>
   <ul class="collapse">
-  <li><a href="#where-does-your-data-live" id="toc-where-does-your-data-live" class="nav-link" data-scroll-target="#where-does-your-data-live">Where does your data live?</a></li>
-  <li><a href="#common-patterns" id="toc-common-patterns" class="nav-link" data-scroll-target="#common-patterns">Common patterns</a></li>
+  <li><a href="#define-the-process" id="toc-define-the-process" class="nav-link" data-scroll-target="#define-the-process">1. Define the process</a></li>
+  <li><a href="#make-the-aim-measurable" id="toc-make-the-aim-measurable" class="nav-link" data-scroll-target="#make-the-aim-measurable">2. Make the aim measurable</a></li>
+  <li><a href="#locate-the-pain-point" id="toc-locate-the-pain-point" class="nav-link" data-scroll-target="#locate-the-pain-point">3. Locate the pain point</a></li>
+  <li><a href="#select-one-principle" id="toc-select-one-principle" class="nav-link" data-scroll-target="#select-one-principle">4. Select one principle</a></li>
+  <li><a href="#design-the-first-small-test" id="toc-design-the-first-small-test" class="nav-link" data-scroll-target="#design-the-first-small-test">5. Design the first small test</a></li>
+  <li><a href="#choose-evidence-of-impact" id="toc-choose-evidence-of-impact" class="nav-link" data-scroll-target="#choose-evidence-of-impact">6. Choose evidence of impact</a></li>
   </ul></li>
-  <li><a href="#a-data-science-mindset" id="toc-a-data-science-mindset" class="nav-link" data-scroll-target="#a-data-science-mindset">A data science mindset</a>
+  <li><a href="#choose-an-approach-that-fits" id="toc-choose-an-approach-that-fits" class="nav-link" data-scroll-target="#choose-an-approach-that-fits">Choose an approach that fits</a>
   <ul class="collapse">
-  <li><a href="#reproducibility-and-transparency" id="toc-reproducibility-and-transparency" class="nav-link" data-scroll-target="#reproducibility-and-transparency">Reproducibility and transparency</a></li>
-  <li><a href="#automation-and-version-control" id="toc-automation-and-version-control" class="nav-link" data-scroll-target="#automation-and-version-control">Automation and version control</a></li>
-  <li><a href="#data-storytelling-and-collaborative-workflows" id="toc-data-storytelling-and-collaborative-workflows" class="nav-link" data-scroll-target="#data-storytelling-and-collaborative-workflows">Data storytelling and collaborative workflows</a></li>
+  <li><a href="#questions-to-guide-your-choice" id="toc-questions-to-guide-your-choice" class="nav-link" data-scroll-target="#questions-to-guide-your-choice">Questions to guide your choice</a></li>
   </ul></li>
-  <li><a href="#governance-and-ethical-use" id="toc-governance-and-ethical-use" class="nav-link" data-scroll-target="#governance-and-ethical-use">Governance and ethical use</a></li>
-  <li><a href="#familiar-applications" id="toc-familiar-applications" class="nav-link" data-scroll-target="#familiar-applications">Familiar applications</a>
+  <li><a href="#check-the-evidence-before-acting" id="toc-check-the-evidence-before-acting" class="nav-link" data-scroll-target="#check-the-evidence-before-acting">Check the evidence before acting</a>
   <ul class="collapse">
-  <li><a href="#preserve-the-student-story" id="toc-preserve-the-student-story" class="nav-link" data-scroll-target="#preserve-the-student-story">Preserve the student story</a></li>
-  <li><a href="#refresh-a-recurring-report" id="toc-refresh-a-recurring-report" class="nav-link" data-scroll-target="#refresh-a-recurring-report">Refresh a recurring report</a></li>
-  <li><a href="#maintain-a-curriculum-map" id="toc-maintain-a-curriculum-map" class="nav-link" data-scroll-target="#maintain-a-curriculum-map">Maintain a curriculum map</a></li>
-  <li><a href="#share-the-process" id="toc-share-the-process" class="nav-link" data-scroll-target="#share-the-process">Share the process</a></li>
-  <li><a href="#make-evidence-production-visible-to-students" id="toc-make-evidence-production-visible-to-students" class="nav-link" data-scroll-target="#make-evidence-production-visible-to-students">Make evidence production visible to students</a></li>
+  <li><a href="#what-kind-of-question-is-this" id="toc-what-kind-of-question-is-this" class="nav-link" data-scroll-target="#what-kind-of-question-is-this">What kind of question is this?</a></li>
+  <li><a href="#does-the-measure-mean-what-we-think" id="toc-does-the-measure-mean-what-we-think" class="nav-link" data-scroll-target="#does-the-measure-mean-what-we-think">Does the measure mean what we think?</a></li>
+  <li><a href="#could-this-be-noise" id="toc-could-this-be-noise" class="nav-link" data-scroll-target="#could-this-be-noise">Could this be noise?</a></li>
   </ul></li>
-  <li><a href="#a-small-demonstration-in-r" id="toc-a-small-demonstration-in-r" class="nav-link" data-scroll-target="#a-small-demonstration-in-r">A small demonstration in R</a>
+  <li><a href="#establish-the-two-guardrails" id="toc-establish-the-two-guardrails" class="nav-link" data-scroll-target="#establish-the-two-guardrails">Establish the two guardrails</a>
   <ul class="collapse">
-  <li><a href="#define-the-data-and-the-rule" id="toc-define-the-data-and-the-rule" class="nav-link" data-scroll-target="#define-the-data-and-the-rule">Define the data and the rule</a></li>
-  <li><a href="#make-the-denominator-visible" id="toc-make-the-denominator-visible" class="nav-link" data-scroll-target="#make-the-denominator-visible">Make the denominator visible</a></li>
-  <li><a href="#visualize-the-result" id="toc-visualize-the-result" class="nav-link" data-scroll-target="#visualize-the-result">Visualize the result</a></li>
-  <li><a href="#connect-the-result-to-a-next-step" id="toc-connect-the-result-to-a-next-step" class="nav-link" data-scroll-target="#connect-the-result-to-a-next-step">Connect the result to a next step</a></li>
+  <li><a href="#governance" id="toc-governance" class="nav-link" data-scroll-target="#governance">Governance</a></li>
+  <li><a href="#human-centered-and-ethical-use" id="toc-human-centered-and-ethical-use" class="nav-link" data-scroll-target="#human-centered-and-ethical-use">Human-centered and ethical use</a></li>
   </ul></li>
-  <li><a href="#redesign-one-process" id="toc-redesign-one-process" class="nav-link" data-scroll-target="#redesign-one-process">Redesign one process</a>
+  <li><a href="#put-your-pilot-plan-on-one-page" id="toc-put-your-pilot-plan-on-one-page" class="nav-link" data-scroll-target="#put-your-pilot-plan-on-one-page">Put your pilot plan on one page</a>
   <ul class="collapse">
-  <li><a href="#process-redesign-worksheet" id="toc-process-redesign-worksheet" class="nav-link" data-scroll-target="#process-redesign-worksheet">Process redesign worksheet</a></li>
-  <li><a href="#implementation-concept" id="toc-implementation-concept" class="nav-link" data-scroll-target="#implementation-concept">Implementation concept</a></li>
-  <li><a href="#evaluate-the-improvement" id="toc-evaluate-the-improvement" class="nav-link" data-scroll-target="#evaluate-the-improvement">Evaluate the improvement</a></li>
+  <li><a href="#a-practical-sequence" id="toc-a-practical-sequence" class="nav-link" data-scroll-target="#a-practical-sequence">A practical sequence</a></li>
   </ul></li>
-  <li><a href="#how-this-resource-demonstrates-the-principles" id="toc-how-this-resource-demonstrates-the-principles" class="nav-link" data-scroll-target="#how-this-resource-demonstrates-the-principles">How this resource demonstrates the principles</a></li>
-  <li><a href="#references-from-the-presentation" id="toc-references-from-the-presentation" class="nav-link" data-scroll-target="#references-from-the-presentation">References from the presentation</a></li>
+  <li><a href="#learn-from-the-test" id="toc-learn-from-the-test" class="nav-link" data-scroll-target="#learn-from-the-test">Learn from the test</a></li>
+  <li><a href="#explore-how-this-resource-was-built" id="toc-explore-how-this-resource-was-built" class="nav-link" data-scroll-target="#explore-how-this-resource-was-built">Explore how this resource was built</a>
+  <ul class="collapse">
+  <li><a href="#a-reusable-calculation" id="toc-a-reusable-calculation" class="nav-link" data-scroll-target="#a-reusable-calculation">A reusable calculation</a></li>
+  <li><a href="#what-makes-this-useful" id="toc-what-makes-this-useful" class="nav-link" data-scroll-target="#what-makes-this-useful">What makes this useful?</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
 </nav>
 </div>
@@ -2362,74 +2360,83 @@ break-inside: avoid;
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>About this resource
+<span class="screen-reader-only">Note</span>Welcome back to your worksheet
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This companion resource draws on the ELC 2026 presentation, <em>From Spreadsheets to Systems</em>. Use it to examine one recurring educational-data problem, identify an improvement, and plan a small pilot.</p>
-<p>The principles apply whether you use spreadsheets, forms, dashboards, or code.</p>
+<p>You identified a recurring educational-data problem and a small change you could test. This companion resource helps you turn those ideas into a pilot plan.</p>
+<p>Start with your worksheet. Use the sections below to clarify your approach, involve the right people, and decide what evidence would justify continuing.</p>
 </div>
 </div>
-<section id="start-with-a-question" class="level1">
-<h1>Start with a question</h1>
-<p>Physical therapy programs collect evidence about student success, competency attainment, curricular effectiveness, clinical education, and accreditation. Turning that information into useful evidence requires attention to how it moves through the program and informs decisions.</p>
-<p><strong>Choose one recurring problem:</strong> something that takes too long, gets recreated, depends on one person, or is difficult to answer quickly. Keep that problem in mind as you work through this resource.</p>
-<section id="where-does-your-data-live" class="level2">
-<h2 class="anchored" data-anchor-id="where-does-your-data-live">Where does your data live?</h2>
-<p>Sketch your current process on paper. Include:</p>
+<section id="turn-your-worksheet-into-a-pilot" class="level1">
+<h1>Turn your worksheet into a pilot</h1>
+<p>A useful first test is small enough to complete and specific enough to learn from. Choose one course, cohort, report, or review cycle.</p>
+<section id="define-the-process" class="level2">
+<h2 class="anchored" data-anchor-id="define-the-process">1. Define the process</h2>
+<p>Name the recurring work and its boundaries.</p>
+<p>“Improve student-success data” is broad. “Prepare the first-term progression review for one cohort” identifies work you can map and test.</p>
+<p><strong>Write down:</strong></p>
 <ul>
-<li>People who contribute, review, or use the information.</li>
-<li>Systems and files where records live.</li>
-<li>Handoffs between people or systems.</li>
-<li>Calculations and reports.</li>
-<li>Decisions the evidence supports.</li>
-</ul>
-<p>Then consider:</p>
-<ul>
-<li>Where do people copy and paste information?</li>
-<li>Does email carry an approval or review process?</li>
-<li>Which file is authoritative?</li>
-<li>Which steps depend on knowledge held by one person?</li>
-<li>What would happen if that person left?</li>
+<li>What starts the process?</li>
+<li>What output or decision marks its end?</li>
+<li>Who contributes information or uses the result?</li>
+<li>Which part will your pilot address?</li>
 </ul>
 </section>
-<section id="common-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="common-patterns">Common patterns</h2>
+<section id="make-the-aim-measurable" class="level2">
+<h2 class="anchored" data-anchor-id="make-the-aim-measurable">2. Make the aim measurable</h2>
+<p>Use the worksheet’s structure:</p>
+<blockquote class="blockquote">
+<p>By <strong>[date]</strong>, improve <strong>[measure]</strong> from <strong>[baseline]</strong> to <strong>[target]</strong>.</p>
+</blockquote>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>Within 30 days, reduce preparation time for one course-outcome report from 90 minutes to 45 minutes, while maintaining agreement with the checked calculations.</p>
+</blockquote>
+<p>If you do not know the baseline, measuring the current process can be your first step. Avoid choosing a target before understanding the work.</p>
+</section>
+<section id="locate-the-pain-point" class="level2">
+<h2 class="anchored" data-anchor-id="locate-the-pain-point">3. Locate the pain point</h2>
+<p>Identify the exact step, file, or handoff causing difficulty.</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Current pattern</th>
-<th>Consequence</th>
+<th>Broad concern</th>
+<th>A more specific pain point</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Multiple spreadsheets</td>
-<td>Duplicate work and inconsistent records</td>
+<td>Reporting takes too long</td>
+<td>Someone manually retypes assessment results into a second workbook.</td>
 </tr>
 <tr class="even">
-<td>Manual reporting</td>
-<td>Time spent repeating routine preparation</td>
+<td>Records are inconsistent</td>
+<td>Two files use different definitions of the same outcome.</td>
 </tr>
 <tr class="odd">
-<td>Siloed systems</td>
-<td>Limited visibility across the program</td>
+<td>Ownership is unclear</td>
+<td>No one is responsible for updating the curriculum map after a course change.</td>
 </tr>
 <tr class="even">
-<td>Disconnected records</td>
-<td>Difficult longitudinal tracking</td>
+<td>The process is fragile</td>
+<td>One faculty member knows which records to exclude, but the rule is undocumented.</td>
 </tr>
 <tr class="odd">
-<td>One-off analyses</td>
-<td>Reports that require rebuilding each cycle</td>
+<td>Decisions are difficult to explain</td>
+<td>A summary percentage omits its denominator and calculation rule.</td>
 </tr>
 </tbody>
 </table>
+<p>Specificity helps you choose an improvement that addresses the problem.</p>
 </section>
-</section>
-<section id="a-data-science-mindset" class="level1">
-<h1>A data science mindset</h1>
-<p>A data science mindset helps us consider how information is collected, transformed, interpreted, and used. These principles offer a starting point for improving ordinary academic workflows.</p>
+<section id="select-one-principle" class="level2">
+<h2 class="anchored" data-anchor-id="select-one-principle">4. Select one principle</h2>
+<p>Choose the principle most closely connected to the pain point. Several may matter, but one can guide the first test.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -2439,15 +2446,15 @@ break-inside: avoid;
 <thead>
 <tr class="header">
 <th>Principle</th>
-<th>A question to ask</th>
-<th>A first improvement</th>
+<th>Question to ask</th>
+<th>Possible first improvement</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Reproducibility</strong></td>
 <td>Can someone regenerate this answer next term?</td>
-<td>Retain the inputs and document the steps.</td>
+<td>Keep the inputs and document the steps.</td>
 </tr>
 <tr class="even">
 <td><strong>Transparency</strong></td>
@@ -2462,7 +2469,7 @@ break-inside: avoid;
 <tr class="even">
 <td><strong>Version control</strong></td>
 <td>Can we reconstruct what changed and when?</td>
-<td>Preserve versions and a change history.</td>
+<td>Keep versions and a change history.</td>
 </tr>
 <tr class="odd">
 <td><strong>Data storytelling</strong></td>
@@ -2476,93 +2483,222 @@ break-inside: avoid;
 </tr>
 </tbody>
 </table>
-<section id="reproducibility-and-transparency" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility-and-transparency">Reproducibility and transparency</h2>
-<p>Consider an end-of-term course review.</p>
+</section>
+<section id="design-the-first-small-test" class="level2">
+<h2 class="anchored" data-anchor-id="design-the-first-small-test">5. Design the first small test</h2>
+<p>Describe what you will change, who will participate, and what you will retain for comparison.</p>
+<p>For example:</p>
+<blockquote class="blockquote">
+<p>For one course report, replace manual re-entry with a reusable import process. Compare the resulting report with a checked report from the same input data.</p>
+</blockquote>
+<p>A test can begin with a documented checklist or shared definition. It does not require a new software platform.</p>
+</section>
+<section id="choose-evidence-of-impact" class="level2">
+<h2 class="anchored" data-anchor-id="choose-evidence-of-impact">6. Choose evidence of impact</h2>
+<p>Identify <strong>one number to track</strong> and <strong>one thing that must not get worse</strong>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Stage</th>
+<th>Improvement you want</th>
+<th>Number to track</th>
+<th>What must not get worse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Less repeated work</td>
+<td>Minutes required to prepare the report</td>
+<td>Accuracy of the calculations</td>
+</tr>
+<tr class="even">
+<td>More consistent records</td>
+<td>Number of discrepancies between records</td>
+<td>Time required for faculty to submit information</td>
+</tr>
+<tr class="odd">
+<td>A process others can run</td>
+<td>Steps completed independently by a colleague</td>
+<td>Appropriate access to sensitive information</td>
+</tr>
+<tr class="even">
+<td>Faster review</td>
+<td>Days from submission to review</td>
+<td>Completeness of the review</td>
+</tr>
+<tr class="odd">
+<td>Clearer reporting</td>
+<td>Readers correctly interpreting a measure</td>
+<td>Visibility of uncertainty and limitations</td>
+</tr>
+</tbody>
+</table>
+<p>Set the definitions before the pilot so that the comparison means what you intend.</p>
+</section>
+</section>
+<section id="choose-an-approach-that-fits" class="level1">
+<h1>Choose an approach that fits</h1>
+<p>Coding is one way to put data science principles into practice. It can make preparation and analysis steps explicit and repeatable. The same principles can also guide work in spreadsheets, shared records, visual tools, and documented processes.</p>
+<p>Start with the educational question and the workflow. Then choose an approach that your team can maintain.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>What it can support</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Question</td>
-<td>How did students perform on the course outcomes this term?</td>
+<td><strong>Structured spreadsheets</strong></td>
+<td>Consistent fields, visible calculations, and reusable summaries</td>
+<td>A course-report template with validation and documented formulas</td>
 </tr>
 <tr class="even">
-<td>Data</td>
-<td>Grades and assessment results mapped to those outcomes</td>
+<td><strong>Forms and shared records</strong></td>
+<td>Consistent collection and an authoritative record</td>
+<td>A form that collects required information into a shared record</td>
 </tr>
 <tr class="odd">
-<td>Method</td>
-<td>Apply a documented mapping and calculation</td>
+<td><strong>Saved queries and visual data preparation</strong></td>
+<td>Repeatable importing, cleaning, and combining</td>
+<td>Refreshing a saved preparation process with the next term’s data</td>
 </tr>
 <tr class="even">
-<td>Answer</td>
-<td>Students had the most difficulty with Outcome 3</td>
+<td><strong>Dashboards</strong></td>
+<td>Repeated access to defined measures and relevant comparisons</td>
+<td>A report showing trends by cohort with visible denominators</td>
 </tr>
 <tr class="odd">
-<td>Decision</td>
-<td>Review the assessment alignment and consider additional practice</td>
+<td><strong>Workflow automation</strong></td>
+<td>Routine routing, reminders, and status updates</td>
+<td>A submission that initiates a review notification</td>
+</tr>
+<tr class="even">
+<td><strong>R or Python scripts</strong></td>
+<td>Explicit, reusable preparation and analysis steps</td>
+<td>A script that generates the same report from updated inputs</td>
+</tr>
+<tr class="odd">
+<td><strong>Process documentation</strong></td>
+<td>Shared definitions, roles, and checks</td>
+<td>Instructions that let a colleague repeat a review process</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Reproducibility:</strong> Could another faculty member generate the same report next year using the same inputs and rules?</p>
-<p><strong>Transparency:</strong> Could they tell exactly how “Outcome 3 performance” was calculated?</p>
-<p>A reproducible calculation still requires review of whether the measure answers the educational question.</p>
-</section>
-<section id="automation-and-version-control" class="level2">
-<h2 class="anchored" data-anchor-id="automation-and-version-control">Automation and version control</h2>
-<p>Automation reduces repeated work that does not require a new decision. It might involve a reusable spreadsheet template, a form that updates a record, or a script that refreshes a report.</p>
-<p>Version control preserves the history of the work. It helps someone identify what changed, when it changed, and which version supported a particular decision.</p>
-<p><strong>Reflection prompts:</strong></p>
+<p>These approaches can be combined. A form might collect records, a saved query might prepare them, and a dashboard might present the results.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>The tool does not establish the quality of the process
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A spreadsheet can contain transparent, reproducible work. A sophisticated dashboard can contain unclear definitions or unreliable inputs.</p>
+<p>Evaluate the definitions, checks, responsibilities, and interpretation alongside the technology.</p>
+</div>
+</div>
+<section id="questions-to-guide-your-choice" class="level2">
+<h2 class="anchored" data-anchor-id="questions-to-guide-your-choice">Questions to guide your choice</h2>
 <ul>
-<li>What are you repeatedly doing by hand?</li>
-<li>Could you reconstruct what a record or report looked like a year ago?</li>
-<li>How do you identify the current approved version?</li>
+<li>Can your current tools support the small test?</li>
+<li>Who will maintain the approach?</li>
+<li>Can a colleague understand and repeat the work?</li>
+<li>Does the approach preserve the history you need?</li>
+<li>Can it provide appropriate access and protect sensitive records?</li>
+<li>Does it reduce work overall, including work shifted to other people?</li>
 </ul>
 </section>
-<section id="data-storytelling-and-collaborative-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="data-storytelling-and-collaborative-workflows">Data storytelling and collaborative workflows</h2>
-<p>A percentage becomes more useful when readers understand its denominator, context, and implications.</p>
-<p>For example, “First-time pass rate was 87%” may lead to further questions:</p>
-<ul>
-<li>Which students or cohorts experienced difficulty?</li>
-<li>Has the pattern changed?</li>
-<li>Are the measures comparable across terms?</li>
-<li>What response should the program consider?</li>
-</ul>
-<p>A shared workflow makes those questions and calculations understandable to others. Documenting the steps helps colleagues participate and sustain the process.</p>
 </section>
-</section>
-<section id="governance-and-ethical-use" class="level1">
-<h1>Governance and ethical use</h1>
-<p>Every workflow needs clear responsibilities for the records and their use.</p>
+<section id="check-the-evidence-before-acting" class="level1">
+<h1>Check the evidence before acting</h1>
+<p>The worksheet offers three checks. Use them when designing the pilot and interpreting its results.</p>
+<section id="what-kind-of-question-is-this" class="level2">
+<h2 class="anchored" data-anchor-id="what-kind-of-question-is-this">What kind of question is this?</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
+<th>Question type</th>
+<th>Example</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Describing</strong></td>
+<td>What percentage met the benchmark this term?</td>
+<td>Summarizes the observed records.</td>
+</tr>
+<tr class="even">
+<td><strong>Predicting</strong></td>
+<td>Which students may need additional support next term?</td>
+<td>Requires evidence that the prediction performs adequately for its intended use.</td>
+</tr>
+<tr class="odd">
+<td><strong>Explaining why</strong></td>
+<td>Did a curriculum change cause an improvement?</td>
+<td>Requires a design and analysis capable of addressing alternative explanations.</td>
+</tr>
+</tbody>
+</table>
+<p>A pattern or association can suggest a question to investigate. It does not establish a cause by itself.</p>
+</section>
+<section id="does-the-measure-mean-what-we-think" class="level2">
+<h2 class="anchored" data-anchor-id="does-the-measure-mean-what-we-think">Does the measure mean what we think?</h2>
+<p>Document:</p>
+<ul>
+<li>What the measure represents.</li>
+<li>Its calculation and denominator.</li>
+<li>How missing records are handled.</li>
+<li>Whether definitions are consistent across terms.</li>
+<li>What the measure leaves out.</li>
+</ul>
+<p>A precisely calculated measure can still be a poor representation of the educational outcome you care about.</p>
+</section>
+<section id="could-this-be-noise" class="level2">
+<h2 class="anchored" data-anchor-id="could-this-be-noise">Could this be noise?</h2>
+<p>Consider the number of students and the number of observations over time.</p>
+<p>With small cohorts, a few students can produce a substantial percentage change. Look at counts alongside percentages and examine several time points when possible.</p>
+<p>For a small workflow pilot, a faster report on one attempt is encouraging. Repeat testing can help determine whether the improvement is sustainable.</p>
+</section>
+</section>
+<section id="establish-the-two-guardrails" class="level1">
+<h1>Establish the two guardrails</h1>
+<section id="governance" class="level2">
+<h2 class="anchored" data-anchor-id="governance">Governance</h2>
+<p>Clarify responsibilities before using the revised process.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
 <th>Responsibility</th>
-<th>What to clarify</th>
+<th>Question</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Ownership</td>
-<td>Who is accountable for the dataset and its definitions?</td>
+<td>Who is accountable for the records and definitions?</td>
 </tr>
 <tr class="even">
-<td>Contributions</td>
-<td>Who enters information, and how are errors corrected?</td>
+<td>Entry</td>
+<td>Who contributes information and corrects errors?</td>
 </tr>
 <tr class="odd">
 <td>Editing</td>
@@ -2570,7 +2706,7 @@ break-inside: avoid;
 </tr>
 <tr class="even">
 <td>Visibility</td>
-<td>Who needs identifiable records or summary information?</td>
+<td>Who needs individual records or summary information?</td>
 </tr>
 <tr class="odd">
 <td>Review</td>
@@ -2578,344 +2714,103 @@ break-inside: avoid;
 </tr>
 <tr class="even">
 <td>Continuity</td>
-<td>Who maintains the workflow and provides backup?</td>
+<td>Who keeps the process running when someone leaves?</td>
 </tr>
 </tbody>
 </table>
-<p>Analytics should support human judgment. Trust, transparency, reliability, and stakeholder participation matter especially when information influences student progression or curricular decisions.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>From a pattern to a conversation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A downward GPA trend can prompt a supportive conversation. Interpreting it requires context, including assessment changes and circumstances affecting the student.</p>
-<p>An automated flag should initiate review. The pattern alone does not explain its cause or determine an appropriate response.</p>
-</div>
-</div>
-<p>Before acting, ask:</p>
+</section>
+<section id="human-centered-and-ethical-use" class="level2">
+<h2 class="anchored" data-anchor-id="human-centered-and-ethical-use">Human-centered and ethical use</h2>
+<p>Consider how the process affects the people represented in the data and the people doing the work.</p>
 <ul>
-<li>Is the information accurate and complete?</li>
-<li>Are the measures comparable?</li>
-<li>Could missing records or inconsistent definitions affect groups differently?</li>
-<li>Who should help interpret the result?</li>
-<li>How can someone question or correct the evidence?</li>
+<li>Could missing information or inconsistent definitions affect some students differently?</li>
+<li>Can students or faculty question and correct relevant records?</li>
+<li>Does the output communicate limitations?</li>
+<li>Does a flag initiate a conversation and contextual review?</li>
+<li>Does the improvement create additional burden elsewhere?</li>
 </ul>
-</section>
-<section id="familiar-applications" class="level1">
-<h1>Familiar applications</h1>
-<section id="preserve-the-student-story" class="level2">
-<h2 class="anchored" data-anchor-id="preserve-the-student-story">Preserve the student story</h2>
-<p>A current GPA of 2.8 provides a snapshot. A sequence of 3.6, 3.4, 3.1, and 2.8 reveals a pattern that may warrant earlier inquiry.</p>
-<p>Preserving history makes it possible to ask when performance began to change and whether support could have started sooner.</p>
-<p><strong>Consider:</strong> Which records currently overwrite information that would help you understand change over time?</p>
-</section>
-<section id="refresh-a-recurring-report" class="level2">
-<h2 class="anchored" data-anchor-id="refresh-a-recurring-report">Refresh a recurring report</h2>
-<p>Annual reporting often repeats the same downloads, cleaning, calculations, charts, and copying.</p>
-<p>Define those steps once and reuse them with the next dataset. Review data quality and interpretation each cycle.</p>
-<p><strong>Consider:</strong> Which part of your next report could be refreshed through an established process?</p>
-</section>
-<section id="maintain-a-curriculum-map" class="level2">
-<h2 class="anchored" data-anchor-id="maintain-a-curriculum-map">Maintain a curriculum map</h2>
-<p>Treat curriculum mapping as information maintained when courses change. Questions such as “Where is pain management taught, how often, and at what level?” can then draw on an existing resource.</p>
-<p><strong>Consider:</strong> Who records course changes, and how does that update reach the curriculum map?</p>
-</section>
-<section id="share-the-process" class="level2">
-<h2 class="anchored" data-anchor-id="share-the-process">Share the process</h2>
-<p>Document which file to use, what each field means, and which checks occur before reporting.</p>
-<p>A colleague should be able to understand and participate in the work without reconstructing its logic.</p>
-<p><strong>Consider:</strong> What recurring task currently depends on one person’s memory?</p>
-</section>
-<section id="make-evidence-production-visible-to-students" class="level2">
-<h2 class="anchored" data-anchor-id="make-evidence-production-visible-to-students">Make evidence production visible to students</h2>
-<p>Alongside interpreting an article’s findings, ask students where the data came from, which choices shaped the analysis, and what someone would need to reproduce it.</p>
-<p><strong>Consider:</strong> Where could your course make the production of evidence more visible?</p>
+<p>For example, a downward GPA trend can prompt a supportive conversation. Interpreting it requires context. The trend alone should not determine a progression decision.</p>
 </section>
 </section>
-<section id="a-small-demonstration-in-r" class="level1">
-<h1>A small demonstration in R</h1>
-<p>This resource combines explanatory text with executable R code. Quarto runs the code and assembles its results into the HTML document.</p>
-<p>Changing the inputs and rendering again updates the report through the same documented process.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Fictional example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>All student records below are fictional. This example demonstrates a reporting workflow rather than findings from a DPT program.</p>
-<p>The calculation uses base R. The table uses the <code>knitr</code> package.</p>
-</div>
-</div>
-<section id="define-the-data-and-the-rule" class="level2">
-<h2 class="anchored" data-anchor-id="define-the-data-and-the-rule">Define the data and the rule</h2>
-<p>In this example, “met benchmark” means a course-outcome score of at least 70.</p>
-<p>A real program would define and justify its own measure, including the assessment mapping and treatment of missing data.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>View the R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>benchmark <span class="ot">&lt;-</span> <span class="dv">70</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">student_id =</span> <span class="fu">rep</span>(<span class="fu">sprintf</span>(<span class="st">&quot;S%02d&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">8</span>), <span class="at">times =</span> <span class="dv">3</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">outcome =</span> <span class="fu">rep</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">&quot;Outcome 1&quot;</span>, <span class="st">&quot;Outcome 2&quot;</span>, <span class="st">&quot;Outcome 3&quot;</span>),</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">each =</span> <span class="dv">8</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dv">82</span>, <span class="dv">76</span>, <span class="dv">91</span>, <span class="dv">68</span>, <span class="dv">74</span>, <span class="dv">88</span>, <span class="dv">79</span>, <span class="dv">72</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dv">77</span>, <span class="dv">65</span>, <span class="dv">84</span>, <span class="dv">71</span>, <span class="dv">69</span>, <span class="dv">80</span>, <span class="dv">73</span>, <span class="dv">75</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">66</span>, <span class="dv">72</span>, <span class="dv">58</span>, <span class="dv">75</span>, <span class="dv">63</span>, <span class="dv">81</span>, <span class="dv">69</span>, <span class="dv">64</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicate student-outcome records and invalid scores.</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="sc">!</span><span class="fu">anyDuplicated</span>(results[<span class="fu">c</span>(<span class="st">&quot;student_id&quot;</span>, <span class="st">&quot;outcome&quot;</span>)]),</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">is.numeric</span>(results<span class="sc">$</span>score),</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">is.na</span>(results<span class="sc">$</span>score) <span class="sc">|</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      (results<span class="sc">$</span>score <span class="sc">&gt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> results<span class="sc">$</span>score <span class="sc">&lt;=</span> <span class="dv">100</span>)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>results<span class="sc">$</span>met_benchmark <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">is.na</span>(results<span class="sc">$</span>score),</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="cn">NA</span>,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  results<span class="sc">$</span>score <span class="sc">&gt;=</span> benchmark</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</section>
-<section id="make-the-denominator-visible" class="level2">
-<h2 class="anchored" data-anchor-id="make-the-denominator-visible">Make the denominator visible</h2>
-<p>Missing scores are excluded from the assessed denominator and counted separately. This makes the rule visible and avoids treating missing values as failures.</p>
-<div class="cell">
-<details class="code-fold">
-<summary>View the R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>summary_table <span class="ot">&lt;-</span> <span class="fu">do.call</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  rbind,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="fu">split</span>(results, results<span class="sc">$</span>outcome), <span class="cf">function</span>(x) {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    assessed <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(x<span class="sc">$</span>score))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    met <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">$</span>met_benchmark, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">Outcome =</span> x<span class="sc">$</span>outcome[<span class="dv">1</span>],</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">Assessed =</span> assessed,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">Missing =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(x<span class="sc">$</span>score)),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">Met =</span> met,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">Percent =</span> <span class="cf">if</span> (assessed <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="dv">100</span> <span class="sc">*</span> met <span class="sc">/</span> assessed</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="cn">NA_real_</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(summary_table) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  summary_table,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">1</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Outcome&quot;</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Assessed&quot;</span>,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Missing&quot;</span>,</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Met benchmark&quot;</span>,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;% met&quot;</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Outcome</th>
-<th style="text-align: right;">Assessed</th>
-<th style="text-align: right;">Missing</th>
-<th style="text-align: right;">Met benchmark</th>
-<th style="text-align: right;">% met</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Outcome 1</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">87.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Outcome 2</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">75.0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Outcome 3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">37.5</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="visualize-the-result" class="level2">
-<h2 class="anchored" data-anchor-id="visualize-the-result">Visualize the result</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>View the R code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  summary_table<span class="sc">$</span>Percent,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">names.arg =</span> summary_table<span class="sc">$</span>Outcome,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">horiz =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">1</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;#197c86&quot;</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">border =</span> <span class="cn">NA</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Assessed students meeting benchmark (%)&quot;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img role="img" aria-label="Horizontal bar chart comparing benchmark attainment across three fictional course outcomes." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAALZCAYAAAB2yIs+AAAEDmlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPpu5syskzoPUpqaSDv41lLRsUtGE2uj+ZbNt3CyTbLRBkMns3Z1pJjPj/KRpKT4UQRDBqOCT4P9bwSchaqvtiy2itFCiBIMo+ND6R6HSFwnruTOzu5O4a73L3PnmnO9+595z7t4LkLgsW5beJQIsGq4t5dPis8fmxMQ6dMF90A190C0rjpUqlSYBG+PCv9rt7yDG3tf2t/f/Z+uuUEcBiN2F2Kw4yiLiZQD+FcWyXYAEQfvICddi+AnEO2ycIOISw7UAVxieD/Cyz5mRMohfRSwoqoz+xNuIB+cj9loEB3Pw2448NaitKSLLRck2q5pOI9O9g/t/tkXda8Tbg0+PszB9FN8DuPaXKnKW4YcQn1Xk3HSIry5ps8UQ/2W5aQnxIwBdu7yFcgrxPsRjVXu8HOh0qao30cArp9SZZxDfg3h1wTzKxu5E/LUxX5wKdX5SnAzmDx4A4OIqLbB69yMesE1pKojLjVdoNsfyiPi45hZmAn3uLWdpOtfQOaVmikEs7ovj8hFWpz7EV6mel0L9Xy23FMYlPYZenAx0yDB1/PX6dledmQjikjkXCxqMJS9WtfFCyH9XtSekEF+2dH+P4tzITduTygGfv58a5VCTH5PtXD7EFZiNyUDBhHnsFTBgE0SQIA9pfFtgo6cKGuhooeilaKH41eDs38Ip+f4At1Rq/sjr6NEwQqb/I/DQqsLvaFUjvAx+eWirddAJZnAj1DFJL0mSg/gcIpPkMBkhoyCSJ8lTZIxk0TpKDjXHliJzZPO50dR5ASNSnzeLvIvod0HG/mdkmOC0z8VKnzcQ2M/Yz2vKldduXjp9bleLu0ZWn7vWc+l0JGcaai10yNrUnXLP/8Jf59ewX+c3Wgz+B34Df+vbVrc16zTMVgp9um9bxEfzPU5kPqUtVWxhs6OiWTVW+gIfywB9uXi7CGcGW/zk98k/kmvJ95IfJn/j3uQ+4c5zn3Kfcd+AyF3gLnJfcl9xH3OfR2rUee80a+6vo7EK5mmXUdyfQlrYLTwoZIU9wsPCZEtP6BWGhAlhL3p2N6sTjRdduwbHsG9kq32sgBepc+xurLPW4T9URpYGJ3ym4+8zA05u44QjST8ZIoVtu3qE7fWmdn5LPdqvgcZz8Ww8BWJ8X3w0PhQ/wnCDGd+LvlHs8dRy6bLLDuKMaZ20tZrqisPJ5ONiCq8yKhYM5cCgKOu66Lsc0aYOtZdo5QCwezI4wm9J/v0X23mlZXOfBjj8Jzv3WrY5D+CsA9D7aMs2gGfjve8ArD6mePZSeCfEYt8CONWDw8FXTxrPqx/r9Vt4biXeANh8vV7/+/16ffMD1N8AuKD/A/8leAvFY9bLAAAAOGVYSWZNTQAqAAAACAABh2kABAAAAAEAAAAaAAAAAAACoAIABAAAAAEAAAVAoAMABAAAAAEAAALZAAAAABC95QcAAEAASURBVHgB7N13tF5VnT/gHQm9GnAxYEBAukiPyiglkggICApIl6ZAKAYhTHThyI+JIAoCS5IAShuWoLDAsaAGIgvEGRAcehEEDSgECT0QKQr8+O7xHM59ue9N7n3fJOeePHstcs972rv3s9+/Puwy5M23SlIIECBAgAABAgQIECBAgAABAgQIECDQQIF3NbBNmkSAAAECBAgQIECAAAECBAgQIECAAIEsIAD1QyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECAtDGdq2GESBAgAABAgQIECBAgAABAgQIECAgAPUbIECAAAECBAgQIECAAAECBAgQIECgsQIC0MZ2rYYRIECAAAECBAgQIECAAAECBAgQICAA9RsgQIAAAQIECBAgQIAAAQIECBAgQKCxAgLQxnathhEgQIAAAQIECBAgQIAAAQIECBAgIAD1GyBAgAABAgQIECBAgAABAgQIECBAoLECQxvbMg0jQGCuCBx/2ZVz5b1eSoAAAQKDT+C0fXYffJVWYwIECBAgQIAAgQVOYMibb5UFrtUaTIDAgAVWOmLcgJ/1IAECBAg0S+CJyac3q0FaQ4AAAQIECBAg0EgBU+Ab2a0aRYAAAQIECBAgQIAAAQIECBAgQIBACAhA/Q4IECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorIAAtLFdq2EECBAgQIAAAQIECBAgQIAAAQIECAhA/QYIECBAgAABAgQIECBAgAABAgQIEGisgAC0sV2rYQQIECBAgAABAgQIECBAgAABAgQICED9BggQIECAAAECBAgQIECAAAECBAgQaKyAALSxXathBAgQIECAAAECBAgQIECAAAECBAgIQP0GCBAgQIAAAQIECBAgQIAAAQIECBBorMDQxrZsPjRs5syZ6ZFHHkkzZsxIQ4cOTauttloaPnx4Pp4P1fGVBAgQIECAAAECBAgQIECAAAECBBZ4ASNAO/wJvPrqq2nixIlpq622SsOGDUsbbbRRGj16dBo5cmRaffXV02KLLZZGjRqVfvzjH6fXX3+9w28b2OMRyirzTyAC8eOOOy5tueWW6T3veU9aZpll0gYbbJDGjRuXHnzwwflXMd9MgAABAgQIECBAgAABAgQIEFgABIa8+VZZANo5V5o4ZcqUNGbMmDzqc06+IALRyy+/PI0YMWJObu/4nlmzZqUJEyakSy65JE2fPr3j93lB/wW+973v5aAzRgf3VpZccsl01VVXpe222663y7U8t9IR42pZL5UiQIAAgXkv8MTk0+f9l/pGAgQIECBAgAABAv0UEID2E6y4fdKkSWns2LHlqM6FFloobbHFFnkEaIwCXXzxxdO0adPSb37zmzR16tTisTwi9Lzzzkuf+9znynNz62CzzTZLt99+e1p++eXT008/Pbe+xnvbCPz85z9PO++8cyr+H8Oee+6Ztt5667Toooum3/3ud+mCCy5If//739PCCy+cLr744rTPPvu0eVO9TgtA69UfakOAAIH5KSAAnZ/6vpsAAQIECBAgQGBOBQSgcypVue/GG2/MQVZxKqYzR5j1oQ99qDjV4++9996bjjrqqPTrX/+6PP+Tn/wkfepTnyo/z42DGHEa099XWGGF9NRTT82Nr/DONgLPPvtsWmONNdILL7yQ3vWud6Xo75122qnH3XfccUf62Mc+lv72t7/ldWL/+Mc/plVXXbXHPXX8IACtY6+oEwECBOaPgAB0/rj7VgIECBAgQIAAgf4JWAO0f17pH//4Rw4zi8cOO+ywdNttt7UNP+O+CEivvfbatO+++xaPpUMPPTQ988wz5WcHzRL40Y9+lMPPaNXRRx/9jvAzzm+yySbpK1/5Shzm39V//ud/5mP/ECBAgAABAgQIECBAgAABAgQIdE9AANpPy5j6fs899+SnYpf3s846Ky2yyCKzfUvcc+GFF6b1118/3/vkk0+m8ePHz/Y5NwxOgVjXsyj7779/cfiOv7ExUlHuv//+4tBfAgQIECBAgAABAgQIECBAgACBLgkM7dJ7FojXxDqaJ554YtnWM844I6/pWZ6YzUGEoJMnT07bbLNNvjM2RDr77LPzeqHFo7/61a/SlVdemT8efPDBfY4sPfnkk9Nf/vKXfO+5555bvCIde+yxeVp1McL0pZdeSocffni+vvbaa+fr5c3/PLjlllvS+eefn0ez/vnPf05LL710WnPNNfPO5cccc0zeubz1mern3/72t3mzpQjxHnjggbTsssumDTfcMP93yCGHpJVXXrl6e4/jGAX53HPP5TVUDzjggPT444+nGEF5ww03pJtvvjmttdZaaeTIkemTn/xkD4+HH344byB0/fXX53qvssoqeQ3Wr33taymm//dVYu3NCKRjLc4777wzPfroo2mdddZJG2+8cRo1alTadddd+3p8ttdiyns4xPIHm266adv7q5sjrbTSSm3vc4EAAQIECBAgQIAAAQIECBAgQGBgAtYA7Yfb1VdfnTe1iUc233zzHJ714/Hy1ggWY73HKFdccUXaY489ymvf/va3867hceL73/9+j2nz5U3/PIgp1BHeRSk22onjd7/73en555+Pw3eUCF8jMCzKiy++mA488MAcOBbnWv8OGzYsh4W77LJL66UUI1mPP/74XNdqHao3Rn2+853vpP322696ujyO4PKxxx7L9Rg3blwaPXp0euKJJ8rrxcHQoUPTddddl7baaqscjO6www7lNPPinvi7xBJL5BA5rvdWfv/732fXWIOzXYkNi84555xs2e6ebpz/4he/mEPweFeE39tuu203XjtX32EN0LnK6+UECBAYVALWAB1U3aWyBAgQIECAAIEFVsAI0H50/YMPPljeHaMbB1pidGEEnVF+8Ytf9AhAB/rO6nMHHXRQevnll9Oll16aIuBcbLHFcrgY98QI0KK89tprOUwsQtQY9bnbbrvlEYtvvPFGrlusXRob+uy99955RGZ1o6fXX389b+R066235lfGqM/Y2Cl2n4/Nf2666aZ0zTXX5NGdMQ38rrvuSqeddlrx9e/4e9999+XNpWLkaoyG3H777VOEr1OnTk133313XiczgskzzzwzfeELX0izZs3KYWkEwRGgxn2x2VNsKnTkkUemCDpjx/VqiY2oIhgNnygRZG+33XYpljOI0ZpTpkxJ0c8xOjdGtUado11zo8TGWRMnTsyvfu9735v7Ym58j3cSIECAAAECBAgQIECAAAECBBZkAQFoP3r/D3/4Q3n37KZYlzf2chCBXVFiunm3S0zNjxJhXgSgSy21VB7N2Po9p5xySjmCNALdmHof082LMnbs2BTvOu6443JgOGbMmDzVvLh+6qmnpiL8jCAxRrO2usRamDGVP6Z6R3AZQWq7KeExHT3KCSeckL7+9a8XX5NiunrsoB5h7F//+tf8juWWWy6PmPz4xz9e3hejRkeMGJGn0E+bNi2HrxHIFiU2sIpgtAg/I4yN5QJil/aivPLKKynaefHFF+dp8SeddFI2KK538jfq/t///d8ppu6HVTECNer84x//OC288MKdvN6zBAgQIECAAAECBAgQIECAAAECvQi8nfz0ctGpngLVEaBrrLFGz4v9+LTiiiuWd0+fPr08npcHEfQVozEjAIwRj9Xws6hLBIRbb711/nj77bfndS3jQ4yujHAwypJLLplieYDW8DOuxYjSCD6jxIjRCBfbTZWPe3bcccc0YcKEOCxLBIMxzb5aYi3WavgZ12LUaKz/WZRimYHic6yTGqNMo0QoG9Ptq+FnnI/RshdddFFejzQ+xwjNWMuzG+WnP/1pHu0ba54W4WdM/4/1QvtaI7Ub3+0dBAgQIECAAAECBAgQIECAAIEFVUAA2o+ef+ihh8q7ewv7youzOYg1MYsyY8aM4nCe/o31JmOqeJS99torrbvuum2/P8LHGDkZ63guvvji+b54PkZmRomRotVQN5+s/BMbG6233nr5TIwYrTpWbsuH48ePT0OGDGk9XT4fF+L6YYcd9o574kR1iv8jjzzS455JkyaVn6sjTMuTlYMIfqNEGy+77LLKlYEfRn1iSv7w4cPLNsYmVu9///tThKJ9BcMD/1ZPEiBAgAABAgQIECBAgAABAgQWbAEBaD/6PzbhKUoRHhaf+/O3Oupz+eWX78+jXbs31sIsSrErffG59W+MyoyRkEcffXR63/vely9XR0XG9b7KQgstlNfdLO6pPlucK/7G+qG9lapTjJYsgtjWe2M0alFijdOixOjTP/3pT/ljhNez23G9utZpX4Ft8f45+ftv//Zved3SCD1jSYDzzz8/xVT+mJIfywnEuqYKAQIECBAgQIAAAQIECBAgQIBAdwXeTvS6+95Gvi2mKxdrdsZ6oAPdsbsaqMXmN/OjxHqURVl11VWLwzn+G1PgixIbCM2uVEfMVpcSqD4XoyNjB/feSnVUaF/TxVuntBfvevTRR1MRiEYAHaMw57RU+2tOn+ntvgg7ixLrsh5yyCHpwx/+cN40KuoWmyLFyNZYE1QhQIAAAQIECBAgQIAAAQIECBDojoARoP1wrAaF7UK8OXldbIJTlP4EccUz3fgbu6UXZSAhbLEhVIyKnd1oyvieajsjjOytVEdv9na9OBcjSvtbquavvvpq3ijp8ccf7/Nv8R2ta4kW57vxd4MNNsgbMRXvihBUIUCAAAECBAgQIECAAAECBAgQ6J6AEaD9sNx+++3TD37wg/zEnXfe2Y8ne94amwkVpa9RpLNbEzJ2NR9oqU4pf+GFF/r9mmHDhuXwMOrw0ksvpaWXXrrPdzzzzDPl9WWXXbY8rh60G71ZvWegx9VwNaa377///nP8qrm9O3tsMhVT4KN0a7TpHDfOjQQIECBAgAABAgQIECBAgACBhgsIQPvRwZ/+9KfT4YcfntdsjDU0YyOgUaNG9eMNKcVO4Lfcckt+Jtax/MxnPtP2+WKToXY3DCS4LN615pprFofpscceK497O4ggNtbQrK6BGjvG33PPPfn22Nzngx/8YG+PlufinqK85z3vKQ7n2d/q5kjxpUcdddRc++433ngjRXtjzdE4/sQnPtHnd1U3kJo1a1af97pIgAABAgQIECBAgAABAgQIECDQPwFT4PvhFaMc99hjj/KJL37xi+VO6OXJPg4i0Bw3blx5xy677JKWWWaZ8nMcVEcbxuY47Upce/LJJ9tdnu35agA6u1GHEdgutthiKdb6PP300/O7IwAtShGEFp97+3v33XeXp6vfXZ6cywcRuhZrcEZ9ZxcuxyZX11xzTYqlDvrqh96qHVPs119//TR69Oi01157pdmN1L3vvvvK12y88cblsQMCBAgQIECAAAECBAgQIECAAIHOBQSg/TT81re+lYrp47ER0HHHHTfbgCu+IkKwL33pS+UU55gGXkx7rlahGoj2tc7oz3/+83JTn+rz1eNircwYvdlaNt9881RsLHTeeef1+a5f/vKXeQRorN35/ve/P79qiy22KF8Z7YiRju1KBI4/+9nP8uUIkfs7arbde/t7/iMf+Uh+JALNs88+u8/HwySWPFh33XXTgQce2Oe9rRdjZO+WW26ZTz/33HM5SG29p/r5sssuKz9uttlm5bEDAgQIECBAgAABAgQIECBAgACBzgUEoP00jOnKkyZNKp+KIO1jH/tY6mujnLj20Y9+tMdzEydOTO973/vK9xQH1RGAEcI98MADxaXy71133ZV3EC9PtDko1r188cUX0yuvvNLj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AgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvIAAd/H2oBQQIECBAgAABAgQIECBAgAABAgQItBEQgLaBcZoAAQIECBAgQIAAAQIECBAgQIAAgcEvMHTwN0ELCBCYlwLf2mf3efl1vosAAQIECBAgQIAAAQIECBAg0JHAkDffKh29wcMECBAgQIAAAQIECBAgQIAAAQIECBCoqYAp8DXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzAQFo54beQIAAAQIECBAgQIAAAQIECBAgQIBATQUEoDXtGNUiQIAAAQIECBAgQIAAAQIECBAgQKBzgaGdv8IbCBBYkASOv+zKBam52kqAAAECBAgQIECAwGwETttn99nc4TIBAgTmr8CQN98q87cKvp0AgcEksNIR4wZTddWVAAECBAgQIECAAIG5LPDE5NPn8jd4PQECBDoTMAW+Mz9PEyBAgAABAgQIECBAgAABAgQIECBQYwEBaI07R9UIECBAgAABAgQIECBAgAABAgQIEOhMQADamZ+nCRAgQIAAAQIECBAgQIAAAQIECBCosYAAtMado2oECBAgQIAAAQIECBAgQIAAAQIECHQmIADtzM/TBAgQIECAAAECBAgQIECAAAECBAjUWEAAWuPOUTUCBAgQIECAAAECBAgQIECAAAECBDoTEIB25udpAgQIECBAgAABAgQIECBAgAABAgRqLCAArXHnqBoBAgQIECBAgAABAgQIECBAgAABAp0JCEA78/M0AQIECBAgQIAAAQIECBAgQIAAAQI1FhCA1rhzVI0AAQIECBAgQIAAAQIECBAgQIAAgc4EBKCd+XmaAAECBAgQIECAAAECBAgQIECAAIEaCwhAa9w5qkaAAAECBAgQIECAAAECBAgQIECAQGcCAtDO/DxNgAABAgQIECBAgAABAgQIECBAgECNBQSgNe4cVSNAgAABAgQIECBAgAABAgQIECBAoDMBAWhnfp4mQIAAAQIECBAgQIAAAQIECBAgQKDGAgLQGneOqhEgQIAAAQIECBAgQIAAAQIECBAg0JmAALQzP08TIECAAAECBAgQIECAAAECBAgQIFBjAQFojTtH1QgQIECAAAECBAgQIECAAAECBAgQ6ExAANqZn6cJECBAgAABAgQIECBAgAABAgQIEKixgAC0xp2jagQIECBAgAABAgQIECBAgAABAgQIdCYgAO3Mz9MECBAgQIAAAQIECBAgQIAAAQIECNRYQABa485RNQIECBAgQIAAAQIECBAgQIAAAQIEOhMQgHbm52kCBAgQIECAAAECBAgQIECAAAECBGosIACtceeoGgECBAgQIECAAAECBAgQIECAAAECnQkIQDvz8zQBAgQIECBAgAABAgQIECBAgAABAjUWEIDWuHNUjQABAgQIECBAgAABAgQIECBAgACBzgQEoJ35eZoAAQIECBAgQIAAAQIECBAgQIAAgRoLCEBr3DmqRoAAAQIECBAgQIAAAQIECBAgQIBAZwIC0M78PE2AAAECBAgQIECAAAECBAgQIECAQI0FBKA17hxVI0CAAAECBAgQIECAAAECBAgQIECgMwEBaGd+niZAgAABAgQIECBAgAABAgQIECBAoMYCAtAad46qESBAgAABAgQIECBAgAABAgQIECDQmYAAtDM/TxMgQIAAAQIECBAgQIAAAQIECBAgUGMBAWiNO0fVCBAgQIAAAQIECBAgQIAAAQIECBDoTEAA2pmfpwkQIECAAAECBAgQIECAAAECBAgQqLGAALTGnaNqBAgQIECAAAECBAgQIECAAAECBAh0JiAA7czP0wQIECBAgAABAgQIECBAgAABAgQI1FhAAFrjzlE1AgQIECBAgAABAgQIECBAgAABAgQ6ExCAdubnaQIECBAgQIAAAQIECBAgQIAAAQIEaiwgAK1x56gaAQIECBAgQIAAAQIECBAgQIAAAQKdCQhAO/PzNAECBAgQIECAAAECBAgQIECAAAECNRYQgNa4c1SNAAECBAgQIECAAAECBAgQIECAAIHOBASgnfl5mgABAgQIECBAgAABAgQIECBAgACBGgsIQGvcOapGgAABAgQIECBAgAABAgQIECBAgEBnAgLQzvw8TYAAAQIECBAgQIAAAQIECBAgQIBAjQUEoDXuHFUjQIAAAQIECBAgQIAAAQIECBAgQKAzAQFoZ36eJkCAAAECBAgQIECAAAECBAgQIECgxgIC0Bp3jqoRIECAAAECBAgQIECAAAECBAgQINCZgAC0Mz9PEyBAgAABAgQIECBAgAABAgQIECBQYwEBaI07R9UIECBAgAABAgQIECBAgAABAgQIEOhMQADamZ+nCRAgQIAAAQIECBAgQIAAAQIECBCosYAAtMado2oECBAgQIAAAQIECBAgQIAAAQIECHQmIADtzM/TBAgQIECAAAECBAgQIECAAAECBAjUWEAAWuPOUTUCBAgQIECAAAECBAgQIECAAAECBDoTEIB25udpAgQIECBAgAABAgQIECBAgAABAgRqLCAArXHnqBoBAgQIECBAgAABAgQIECBAgAABAp0JCEA78/M0AQIECBAgQIAAAQIECBAgQIAAAQI1FhCA1rhzVI0AAQIECBAgQIAAAQIECBAgQIAAgc4EBKCd+XmaAAECBAgQIECAAAECBAgQIECAAIEaCwhAa9w5qkaAAAECBAgQIECAAAECBAgQIECAQGcCQzt73NNVgZkzZ6ZHHnkkzZgxIw0dOjStttpqafjw4fm4ep9jAgQIECBAgAABAgQIECBAgAABAgTmjYAAtEPnV199NX3ve99LV1xxRbrpppvS66+/3uONCy20UNpmm23SUUcdlXbeeecUn+d1iVA2wlhl/gg888wz6Ywzzki33XZbeuihh9ITTzyRVl999bTOOuukLbfcMh155JFpkUUWmT+V860ECBAgQIAAAQIECBAgQIAAgYYLDHnzrdLwNs615k2ZMiWNGTMmj/qcky+J0Ovyyy9PI0aMmJPbO75n1qxZacKECemSSy5J06dP7/h9XtB/ge985zvpxBNPTM8//3zbhyMIPffcc3NQ3vamGl1Y6YhxNaqNqhAgQIAAAQIECBAgML8Fnph8+vyugu8nQIBAnwIC0D552l+cNGlSGjt2bDniM0Z2brHFFmmjjTbK/y2++OJp2rRp6Te/+U2aOnVq+aLFFlssnXfeeelzn/tceW5uHWy22Wbp9ttvT8svv3x6+umn59bXeG8bgUsvvTTtt99+5dUddtghj/hceeWV08MPP5x+9KMfpfvvvz9fj9/L//7v/6b111+/vL+uBwLQuvaMehEgQIAAAQIECBCYPwIC0Pnj7lsJEJhzAQHonFuVd954441p6623Lj9vsMEG6YILLkgf+tCHynPVg3vvvTdPgf/1r39dnv7JT36SPvWpT5Wf58ZBjDiN6e8rrLBCeuqpp+bGV3hnG4EIvyMMf/HFF9PCCy+cl0jYdddde9z997//PR133HHp7LPPzuc33njjdOutt+b7e9xYsw8C0Jp1iOoQIECAAAECBAgQmM8CAtD53AG+ngCB2QrYBX62RD1v+Mc//pHDzOLsYYcdltd2bBd+xn0RkF577bVp3333LR5Lhx56aIq1IZVmCvzwhz/M4We07vjjj0+t4Wecj2D0zDPPLJdEuPPOO/OI3bimECBAgAABAgQIECBAgAABAgQIdEdAANpPx5j6fs899+SnYmOhs846a442sIlNbi688MJyivOTTz6Zxo8f389vd/tgEaiO9o2wu12JpRN222238nIsWaAQIECAAAECBAgQIECAAAECBAh0T8Au8P2wjHU0Y0ObosTO3rGm55yWCEEnT55cbnYTGyLF9OdY/7Eov/rVr9KVV16ZPx588MFtp9XHDSeffHL6y1/+ku+NTXSKcuyxx6a//e1v5QjTl156KR1++OH58tprr53iemu55ZZb0vnnn59Hs/75z39OSy+9dFpzzTXzmpXHHHNMWmaZZVof6fH5t7/9bd5sKda0fOCBB9Kyyy6bNtxww/zfIYcckmLdy3blK1/5SnruuefyGqoHHHBAevzxx/P6mDfccEO6+eab01prrZVGjhyZPvnJT/bwiHU0r7rqqnT99dfneq+yyip52vnXvva1vMt6u++L8zH9PALp3/3udylGXj766KN5V/aYhj5q1KheR2z29b7Wa//yL/+SPvKRj+R2rbrqqq2Xe3xeaaWVys+PPfZYeeyAAAECBAgQIECAAAECBAgQIECgcwFrgPbD8Oqrr04777xzfmLzzTfP4Vk/Hi9vjWDxj3/8Y/58xRVXpD322KO89u1vfzuNG/d/u2x///vf7zFtvrzpnwebbLJJDu/i45tvvllefve739121/FtttkmB4bFzbFG5YEHHpgDx+Jc699hw4blsHCXXXZpvZRiJGtM8Y66VutQvTHqE7uhVzcEql6P4DKCv6hHtH306NHpiSeeqN6Sj4cOHZquu+66tNVWW+VgNDYVeuGFF95x3xJLLJFD5LjeW/n973+fXe+4447eLudze+65ZzrnnHNS1H1ul1gHNML0KDF1Pr67zsUaoHXuHXUjQIAAAQIECBAgMO8FrAE67819IwEC/RMwArQfXg8++GB5d4xuHGiJ9SAj6Izyi1/8okcAOtB3Vp876KCD0ssvv5xiF/IIOGOUaoSLUWIEaFFee+21HCbGCMgoMeozpmNvuumm6Y033sh1i7VLn3322bT33nunGJFZXev09ddfzxs5xcY9UWLUZ2zsFLvPRzB50003pWuuuSaPgtx///3TXXfdlU477bR8b2//3HfffXlzqVgbNUZFbr/99inC16lTp6a77747xfqrEQ7Guplf+MIX0qxZs3JYGkFwBKhxX2z2FKNfjzzyyBRB56KLLtrjq2JqegSj4RMlguztttsuxXIGsVnVlClTUvRzjM6NUa1R52jX3CrRP9FPRan6Fuf8JUCAAAEC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gAABAgQIECBAgAABAgS6JCAA7RKk1xAgQIAAAQIECBAgQIAAAQIECBAgUD8BAWj9+kSNCBAgQIAAAQIECBAgQIAAAQIECBDokoAAtEuQXkOAAAECBAgQIECAAAECBAgQIECAQP0EBKD16xM1IkCAAAECBAgQIECAAAECBAgQIECgSwIC0C5Beg0BAgQIECBAgAABAgQIECBAgAABAvUTEIDWr0/UiAABAgQIECBAgAABAgQIECBAgACBLgkIQLsE6TUECBAgQIAAAQIECBAgQIAAAQIECNRPQABavz5RIwIECBAgQIAAAQIECBAgQIAAAQIEuiQgAO0SpNcQIECAAAECBAgQIECAAAECBAgQIFA/AQFo/fpEjQgQIECAAAECBAgQIECAAAECBAgQ6JKAALRLkF5DgAABAgQIECBAgAABAgQIECBAgED9BASg9esTNSJAgAABAgQIECBAgAABAgQIECBAoEsCAtAuQXoNAQIECBAgQIAAAQIECBAgQIAAAQL1ExCA1q9P1IgAAQIECBAgQIAAAQIECBAgQIAAgS4JCEC7BOk1BAgQIECAAAECBAgQIECAAAECBAjUT0AAWr8+USMCBAgQIECAAAECBAgQIECAAAECBLokIADtEqTXECBAgAABAgQIECBAgAABAgQIECBQPwEBaP36RI0IECBAgAABAgQIECBAgAABAgQIEOiSgAC0S5BeQ4AAAQIECBAgQIAAAQIECBAgQIBA/QQEoPXrEzUiQIAAAQIECBAgQIAAAQIECBAgQKBLAgLQLkF6DQECBAgQIECAAAECBAgQIECAAAEC9RMQgNavT9SIAAECBAgQIECAAAECBAgQIECAAIEuCQhAuwTpNQQIECBAgAABAgQIECBAgAABAgQI1E9AAFq/PlEjAgQIECBAgAABAgQIECBAgAABAgS6JCAA7RKk1xAgQIAAAQIECBAgQIAAAQIECBAgUD8BAWj9+kSNCBAgQIAAAQIECBAgQIAAAQIECBDokoAAtEuQXkOAAAECBAgQIECAAAECBAgQIECAQP0EBKD16xM1IkCAAAECBAgQIECAAAECBAgQIECgSwIC0C5Beg0BAgQIECBAgAABAgQIECBAgAABAvUTEIDWr0/UiAABAgQIECBAgAABAgQIECBAgACBLgkIQLsE6TUECBAgQIAAAQIECBAgQIAAAQIE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lXvcX/3wla98JT333HN5DdVYHuDxxx9PP/rRj9INN9yQbr755rx51MiRI9MnP/nJHh4PP/xwuuqqq9L111+f673KKqvkkZZf+9rX0uqrr179incc//3vf8+BdGxKdeedd6ZHH300rbPOOmnjjTdOo0aNSrvuuus7nunviZjqHv1dlHD4zne+k37wgx8Up/JO8OUHBwQIECBAgAABAgQIECBAgAABAl0XGPLWKLU3u/7Whr7w6quvTjvvvHNu3eabbz7gHd0jWPzjH/+Y33PFFVekPfbYoxT79re/ncaNG5c/f//73+8xbb686Z8Hm2yySQ7v4mO1G9/97nen559/vvX2/DnC1wgMi/Liiy+mAw88MAeOxbnWv8OGDcth4S677NJ6KcVI1uOPPz5FXat1qN4Y9Yngb7/99queLo8juHzsscdyPaLto0ePTk888UR5vTgYOnRouu666/JGUhGM7rDDDumFF14oLpd/l1hiiRwix/Xeyu9///vsescdd/R2OZ/bc8890znnnJOi7gMtr7/+eoo6f+ITn0gRyn70ox/Nr4r1Yj//+c/n44kTJ+ZRogP9jvnx3EpH/N/vc358t+8kQIAAAQIECBAgQIAAgXoKPDH59HpWTK0IvCVgBGg/fgYPPvhgeXeMbhxoidGFEXRG+cUvftEjAB3oO6vPHXTQQSk23bn00ktTBJwxSjVCzigxArQor732Wg4TYwRklBj1udtuu6VNN900b9QTdYu1S2Mzpb333juPyKxu9BQBX2zkdOutt+bnY9RnfN5ss81yMHnTTTela665Jo/u3H///dNdd92V18HMN/fyz3333Ze23nrrPHJ1pZVWSttvv32K8HXq1Knp7rvvTrH+agSTZ555ZvrCF76QZs2alcPSCIIjQI37nnrqqTz6NaaeR9C56KKL9vim2IgqgtHwiRJB9nbbbZdiOYPYrGrKlCkp+jlG58ao1qhztGsg5V3veld+x4c//OGBPO4ZAgQIECBAgAABAgQIECBAgACBLggIQPuB+Ic//KG8e3ZTrMsbezmIwK4oMd282yWm5keJMC8C0KWWWiqPZmz9nlNOOaUcQRqBbky9X2uttcrbxo4dm3ctP+6443JgOGbMmDzVvLjh1FNPLcPPCBJjNGurS0xRj6n8M2fOzMFlBKkRsPZWYjp6lBNOOCF9/etfL2+J6eo77bRTDmP/+te/5jB2ueWWy8sFfPzjHy/vi1GjI0aMyFPop02blsPXCGSLEgFqBKNF+BmbEsVyARFUFuWVV15J0c6LL744T4s/6aSTskFxvT9/hwwZkoSf/RFzLwECBAgQIECAAAECBAgQIECg+wJvJz/df3fj3lgdAbrGGmsMuH0rrrhi+ez06dPL43l5EEFfBIBRIgCMEY/V8LOoSwSEMSozyu23357X94zjGF0Z4WCUJZdcMsXyAK3hZ1yLEaUxYjNKjBiNcLHdVPm4Z8cdd0wTJkyIw7IsvPDCeZp9eeKtgxNPPDFVw8+4FqNGY6p5UYplBorPsU5qjDKNEqFsTLevhp9xPkbLXnTRRXk90v/f3n3ATU2lfR8/IBYUxV5RbCgiYll776Ara0ew4SqKvaLYVhb72tBVsTz2taz6qGtlba8Fy+qqqNgLil3svZv3+p/HEzN95p7cNzOT3/l8YDLJSSbnm8mdyZVT9F5N1NWnKQkBBBBAAAEEEEAAAQQQQAABBBBAoDkFCIDWcNzCSN5apViwr9pNJfuVnDJlSrWrpZpPgy1poCSlwYMHO41OXiqpj0/VnFQ/nl27dvXZtL5qZiqppmgyqOtnJv7TwEZLLbWUn6Pm8knHRDY/OXLkyKIDA4X1lUk1K4cPH56/qn+fbOL/5ptv5uQ599xz4/fJGqbxzMSEAr9KKuPVV1+dWMIkAggggAACCCCAAAIIIIAAAggggEAzCdAEvoajpQFtQgrBw/C+ltdkrc855pijllVTy6u+MEPSwEjlkmpl6l8yJWtF5i9L5tP0NNNM4/vdVK1RJa2bDFT6mb/9p/5Di6Wkk0aUD4HY/LyqjRqS+jgNSbVPJ02a5N8qeK3aouVSsq/TcgHbcttgGQIIIIAAAggggAACCCCAAAIIIIDA1Bf4PaI39fel4fdAo5WHPjvVH+gGG2zQpn1OBtQWWGCBNm2j3pXUl2ZICy20UJis+jUEM7WCBhCqlJI1ZpNdCSTX04BFGsG9WFKtz5AUAC2V8pu0h3yTJ092ISCqAHSPHj3CooqvyeNVMTMZEEAAAQQQQAABBBBAAAEEEEAAAQQaSoAAaA2HQ4HChx9+2K9RKohXzeZee+21OFstgbh4pRQmNFp6SG0JwoYBoVQrtlJtSn1OspwKRhZLydqbxZaHeapRWmtKmv/www9+oKRqt5Hfl2i165EPAQQQQAABBBBAAAEEEEAAAQQQQGDqCxAAreEYDBgwwF1zzTV+jaeffrqGNXOzajChkMrVIi03WJDW16jmbU3JJuVffPFFzZuZffbZfRBR+/D111+7mWeeuew2Pvnkk3h59+7d4+nkRKnam8k8bZ1OBlfVvH2nnXaqelMahImEAAIIIIAAAggggAACCCCAAAIIINCcAgRAazhuW265pdtzzz3dd99959SHpgYC2nDDDWvYgnO33HKLe+yxx/w66sdyq622Krl+GGSoVIa2BC7DthZffPEw6d555514utiEArHqQzPZB6pGjJ84caLPrsGGlllmmWKrxvOSAxLNNddc8fyOmsjvc3TfffftqI/mcxBAAAEEEEAAAQQQQAABBBBAAAEEpqIAo8DXgK9ajttuu228xv777x+PhB7PLDOhgOaIESPiHJtvvrmbZZZZ4veaSNY2VKC1VNKyDz/8sNTiivOTAdBKfVwqYDvDDDP4vj5PO+00v20FQEMKgdDwvtjrs88+G89OfnY8s50nFHSdddZZ/adofysFlzXI1Z133unU1UG549DOu83mEUAAAQQQQAABBBBAAAEEEEAAAQTqFCAAWiPgKaec4kLzcQ0EdMghh1TVFF1NxQ866CAXgo1qBn7yyScXfHoyIFqun9Hbb789HtSnYCO/zQh9Zar2Zn5accUVXRhY6IILLii7rXHjxvkaoOq7c7HFFvObWm211eJNqhy//vpr/D5/QgHHW2+91c9WELnWWrP522vr+1VXXdWvqoDm2WefXXYzMlGXB71793a77LJL2bwsRAABBBBAAAEEEEAAAQQQQAABBBBoXAECoDUem3nmmcede+658VoKpK255pqu3EA5WrbGGmvkrHfOOee4nj17xtsJE8stt1yYdArCvfTSS/H7MPHMM8+43XbbLbwt+Rr6vfzqq6/c999/n5NvqaWWckOHDvXz1AT+1FNPzVke3kyaNMmdccYZ/q22179/fz+t2qtrr722n1aAM9QMDeuFV322asqG/kwHDx7sa5OG5R35+re//c2FoPCoUaPc888/X/TjFXg+4YQT4mXafxICCCCAAAIIIIAAAggggAACCCCAQHMKEABtw3Hbbrvt3HnnnRf3iakm4gpcqo/Q4447zt12222+xuOxxx7rtthiC7/s8ccf95+kgX6UZ8cddyz6ydqOBulR0mjl6iNUQVaNYv7ggw+6o48+2gchv/zySzf//PMX3UaYqWCtkmqfbrbZZm7MmDHukksuCYvdiSee6Lp16+bfa7uq6ThhwgTfPFz9i1577bVunXXW8YMcKdPYsWPdjDPOGK+v/QoBxZEjR7rtt9/eqZzabw16JAfVNL3//vv9OgsvvHDJQGu80Xac6Nevn9t77739J2jgJu2bAreqlasA7eeff+4uvfRSt9566/n9V8ZtttnGB6/bcbfYNAIIIIAAAggggAACCCCAAAIIIIBAOwp0ssBP1I7bb+lN33fffW7IkCFV98Wpfiivuuoqt9FGG5V1uffee33gU0HOUumkk07ygclQU7HYYVRN1fzBfrQPU6ZMiTergZxUE/S9996L56kf0vw+MtV8P9QEjTPaxA033OAHhvr444/j2RosKX+E+qWXXtrnXXLJJeN8YWLBBRf0AzHNOeec7qOPPgqzc14VVFU/pEpqyv7oo4/mLA9vnnzySR/Y1HsNWKVAdTJ988037uCDD3YXXnhhcrabbrrpCroBUFN9BXGnn376nLz1vrn44ovdsGHD/GZUE3ifffapd5Mduv58e//ej22HfjAfhgACCCCAAAIIIIAAAggg0LAC74/9vzFDGnYH2bFMC1ADtI7Dr5qCGt1ctSqTTdfzN7nSSiv5gJuak1cKfmrdDTbYwD311FO+iXmoYan56rNTTdcVQDv88MPjPjy1rFhSYO2oo45yoSao8ijAqNqZISnIpybsO+ywQ1wbNBn87NOnj7vrrruKBj+1ja233to999xzbtCgQfH6yeCngpujR4/2NUOLBT/DfnTUq5rxq2sBlUkj1wffH3/8Md4F9XOqY6q+T9MOfsYfwgQCCCCAAAIIIIAAAggggAACCCCAQIcIUAM0ReZPP/3UB0TfeOMN36RaTb7Vz6dqXbY1acAeNUvXtjXwUBiAqdbtqZ9P9ce50EILudA3aP42VItUQVoFRDUYk4Kt8803X362ku+1vsqu9VULVGVXAFXN/hs1qW9U9bOqZvA6Tosuuqjr0aNHQ+/z1LakBujUPgJ8PgIIIIAAAggggAACCCDQeALUAG28Y8Ie/S5AAPR3C6YQQKAKAQKgVSCRBQEEEEAAAQQQQAABBBDImAAB0Iwd8CYrbuNWzWsySHYXAQQQQAABBBBAAAEEEEAAAQQQQAABBBpPgABo4x0T9ggBBBBAAAEEEEAAAQQQQAABBBBAAAEEUhIgAJoSJJtBAAEEEEAAAQQQQAABBBBAAAEEEEAAgcYTIADaeMeEPUIAAQQQQAABBBBAAAEEEEAAAQQQQACBlAQIgKYEyWYQQAABBBBAAAEEEEAAAQQQQAABBBBAoPEECIA23jFhjxBAAAEEEEAAAQQQQAABBBBAAAEEEEAgJQECoClBshkEEEAAAQQQQAABBBBAAAEEEEAAAQQQaDwBAqCNd0zYIwQQQAABBBBAAAEEEEAAAQQQQAABBBBISYAAaEqQbAYBBBBAAAEEEEAAAQQQQAABBBBAAAEEGk+AAGjjHRP2CAEEEEAAAQQQQAABBBBAAAEEEEAAAQRSEiAAmhIkm0EAAQQQQAABBBBAAAEEEEAAAQQQQACBxhMgANp4x4Q9QgABBBBAAAEEEEAAAQQQQAABBBBAAIGUBAiApgTJZhBAAAEEEEAAAQQQQAABBBBAAAEEEECg8QQIgDbeMWGPEEAAAQQQQAABBBBAAAEEEEAAAQQQQCAlAQKgKUGyGQQQQAABBBBAAAEEEEAAAQQQQAABBBBoPAECoI13TNgjBBBAAAEEEEAAAQQQQAABBBBAAAEEEEhJgABoSpBsBgEEEEAAAQQQQAABBBBAAAEEEEAAAQQaT4AAaOMdE/YIAQQQQAABBBBAAAEEEEAAAQQQQAABBFISIACaEiSbQQABBBBAAAEEEEAAAQQQQAABBBBAAIHGEyAA2njHhD1CAAEEEEAAAQQQQAABBBBAAAEEEEAAgZQECICmBMlmEEAAAQQQQAABBBBAAAEEEEAAAQQQQKDxBAiANt4xYY8QQAABBBBAAAEEEEAAAQQQQAABBBBAICUBAqApQbIZBBBAAAEEEEAAAQQQQAABBBBAAAEEEGg8AQKgjXdM2CMEEEAAAQQQQAABBBBAAAEEEEAAAQQQSEmAAGhKkGwGAQQQQAABBBBAAAEEEEAAAQQQQAABBBpPgABo4x0T9ggBBBBAAAEEEEAAAQQQQAABBBBAAAEEUhIgAJoSJJtBAAEEEEAAAQQQQAABBBBAAAEEEEAAgcYTIADaeMeEPUIAAQQQQAABBBBAAAEEEEAAAQQQQACBlAQIgKYEyWYQQAABBBBAAAEEEEAAAQQQQAABBBBAoPEECIA23jFhjxBAAAEEEEAAAQQQQAABBBBAAAEEEEAgJQECoClBshkEEEAAAQQQQAABBBBAAAEEEEAAAQQQaDwBAqCNd0zYIwQQQAABBBBAAAEEEEAAAQQQQAABBBBISYAAaEqQbAYBBBBAAAEEEEAAAQQQQAABBBBAAAEEGk+AAGjjHRP2CAEEEEAAAQQQQAABBBBAAAEEEEAAAQRSEiAAmhIkm0EAAQQQQAABBBBAAAEEEEAAAQQQQACBxhMgANp4x4Q9QgABBBBAAAEEEEAAAQQQQAABBBBAAIGUBAiApgTJZhBAAAEEEEAAAQQQQAABBBBAAAEEEECg8QQIgDbeMWGPEEAAAQQQQAABBBBAAAEEEEAAAQQQQCAlAQKgKUGyGQQQQAABBBBAAAEEEEAAAQQQQAABBBBoPAECoI13TNgjBBBAAAEEEEAAAQQQQAABBBBAAAEEEEhJgABoSpBsBgEEEEAAAQQQQAABBBBAAAEEEEAAAQQaT4AAaOMdE/YIAQQQQAABBBBAAAEEEEAAAQQQQAABBFISIACaEiSbQQABBBBAAAEEEEAAAQQQQAABBBBAAIHGEyAA2njHhD1CAAEEEEAAAQQQQAABBBBAAAEEEEAAgZQECICmBMlmEEAAAQQQQAABBBBAAAEEEEAAAQQQQKDxBAiANt4xYY8QQAABBBBAAAEEEEAAAQQQQAABBBBAICUBAqApQbIZBBBAAAEEEEAAAQQQQAABBBBAAAEEEGg8AQKgjXdM2CMEEEAAAQQQQAABBBBAAAEEEEAAAQQQSEmAAGhKkGwGAQQQQAABBBBAAAEEEEAAAQQQQAABBBpPgABo4x0T9ggBBBBAAAEEEEAAAQQQQAABBBBAAAEEUhIgAJoSJJtBAAEEEEAAAQQQQAABBBBAAAEEEEAAgcYTIADaeMeEPUIAAQQQQAABBBBAAAEEEEAAAQQQQACBlAQIgKYEyWYQQAABBBBAAAEEEEAAAQQQQAABBBBAoPEECIA23jFhjxBAAAEEEEAAAQQQQAABBBBAAAEEEEAgJQECoClBshkEEEAAAQQQQAABBBBAAAEEEEAAAQQQaDwBAqCNd0zYIwQQQAABBBBAAAEEEEAAAQQQQAABBBBISYAAaEqQbAYBBBBAAAEEEEAAAQQQQAABBBBAAAEEGk+AAGjjHRP2CAEEEEAAAQQQQAABBBBAAAEEEEAAAQRSEiAAmhIkm0EAAQQQQAABBBBAAAEEEEAAAQQQQACBxhPo0ni7xB4hgEAjC5yy/TaNvHvsGwIIIIAAAggggAACCCCAAAIIIJAj0CmylDOHNwgggAACCCCAAAIIIIAAAggggAACCCCAQIsI0AS+RQ4kxUAAAQQQQAABBBBAAAEEEEAAAQQQQACBQgECoIUmzEEAAQQQQAABBBBAAAEEEEAAAQQQQACBFhEgANoiB5JiIIAAAggggAACCCCAAAIIIIAAAggggEChAAHQQhPmIIAAAggggAACCCCAAAIIIIAAAggggECLCBAAbZEDSTEQQAABBBBAAAEEEEAAAQQQQAABBBBAoFCAAGihCXMQQAABBBBAAAEEEEAAAQQQQAABBBBAoEUECIC2yIGkGAgggAACCCCAAAIIIIAAAggggAACCCBQKEAAtNCEOQgggAACCCCAAAIIIIAAAggggAACCCDQIgIEQFvkQFIMBBBAAAEEEEAAAQQQQAABBBBAAAEEECgUIABaaMIcBBBAAAEEEEAAAQQQQAABBBBAAAEEEGgRAQKgLXIgKQYCCCCAAAIIIIAAAggggAACCCCAAAIIFAoQAC00YQ4CCCCAAAIIIIAAAggggAACCCCAAAIItIgAAdAWOZAUAwEEEEAAAQQQQAABBBBAAAEEEEAAAQQKBQiAFpowBwEEEEAAAQQQQAABBBBAAAEEEEAAAQRaRIAAaIscSIqBAAIIIIAAAggggAACCCCAAAIIIIAAAoUCBEALTZiDAAIIIIAAAggggAACCCCAAAIIIIAAAi0iQAC0RQ4kxUAAAQQQQAABBBBAAAEEEEAAAQQQQACBQoEuhbOYgwACCBQK/Pzzz27jjTd2Xbt2dT169CjMwBwEECgp8NZbb7lPP/3ULbvssq5Tp04l87EAAQRyBb799lv37LPPur59+7pu3brlLuQdAgiUFdC5M8sss7iFF164bD4WIoBArsD777/v3n33XbfCCiu4zp2pM5arwzsESgv88MMP/nfb8ccf7zbddNPSGafSkk6Rpan02XwsAgg0kcBtt93mBg4c2ER7zK4igAACCCCAAAIIIIAAAggggEBHCiy//PLuqaee6siPrOqzqAFaFROZEEBgvvnm8wgLLbSQO+qoowBBAIEaBEaNGuU++OADN3r0aDfvvPPWsCZZEci2wB133OFuvvlmt8kmm7gtttgi2xiUHoEaBNTq4IgjjnCzzz67O+mkk2pYk6wIIHDqqae61157zY0YMcL16tULEAQQqFLgwQcfdFdddZXr169flWt0bDYCoB3rzach0PQCc801l9tjjz2avhwUAIGOFBgzZowPgA4aNMj17t27Iz+az0KgqQU+/vhjHwBVTQKuPU19KNn5DhZQ1ysKgKrrCM6dDsbn45pe4Morr/QB0D/96U9urbXWavryUAAEOlJAAdDpp5++Iz+y6s+iQ4uqqciIAAIIIIAAAggggAACCCCAAAIIIIAAAs0mQAC02Y4Y+4sAAggggAACCCCAAAIIIIAAAggggAACVQsQAK2aiowIIIAAAggggAACCCCAAAIIIIAAAggg0GwCBECb7YixvwgggAACCCCAAAIIIIAAAggggAACCCBQtQAB0KqpyIgAAggggAACCCCAAAIIIIAAAggggAACzSZAALTZjhj7iwACCCCAAAIIIIAAAggggAACCCCAAAJVCxAArZqKjAgggAACCCCAAAIIIIAAAggggAACCCDQbAIEQJvtiLG/CCCAAAIIIIAAAggggAACCCCAAAIIIFC1AAHQqqnIiAACCCCAAAIIIIAAAggggAACCCCAAALNJkAAtNmOGPuLAAIIIIAAAggggAACCCCAAAIIIIAAAlULEACtmoqMCCCAAAIIIIAAAggggAACCCCAAAIIINBsAgRAm+2Isb8IIIAAAggggAACCCCAAAIIIIAAAgggULUAAdCqqciIAAIIIIAAAggggAACCCCAAAIIIIAAAs0mQAC02Y4Y+4sAAggggAACCCCAAAIIIIAAAggggAACVQsQAK2aiowIIIAAAggggAACCCCAAAIIIIAAAggg0GwCBECb7YixvwgggAACCCCAAAIIIIAAAggggAACCCBQtQAB0KqpyIhAtgW6dOniAcJrtjUoPQK1CYTzJrzWtja5EciuQDhnpp122uwiUHIE2iAQzp3w2oZNsAoCmRUI5014zSwEBUegRoFwzoTXGldv9+zT/NVSu38KH4AAAk0vMPfcczv9IRs6dKhbdNFFm748FACBjhRYZJFFXN++fd3AgQNdp06dOvKj+SwEmlpA1xudM3vuuafr3r17U5eFnUegIwVmnnlmp39DhgxxvXv37siP5rMQaHoB/W7r2bOnP386d6bOWNMfUArQYQILL7ywi6LIDR8+3M0555wd9rnVflAn27mo2szkQwABBBBAAAEEEEAAAQQQQAABBBBAAAEEmkmAxxnNdLTYVwQQQAABBBBAAAEEEEAAAQQQQAABBBCoSYAAaE1cZEYAAQQQQAABBBBAAAEEEEAAAQQQQACBZhIgANpMR4t9RQABBBBAAAEEEEAAAQQQQAABBBBAAIGaBAiA1sRFZgQQQAABBBBAAAEEEEAAAQQQQAABBBBoJgECoM10tNhXBBBAAAEEEEAAAQQQQAABBBBAAAEEEKhJgABoTVxkRgABBBBAAAEEEEAAAQQQQAABBBBAAIFmEiAA2kxHi31FAAEEEEAAAQQQQAABBBBAAAEEEEAAgZoECIDWxEVmBBBAAAEEEEAAAQQQQAABBBBAAAEEEGgmAQKgzXS02FcEEEAAAQQQQAABBBBAAAEEEEAAAQQQqEmAAGhNXGRGAAEEEEAAAQQQQAABBBBAAAEEEEAAgWYSIADaTEeLfUUAAQQQQAABBBBAAAEEEEAAAQQQQACBmgQIgNbERWYEEEAAAQQQQAABBBBAAAEEEEAAAQQQaCYBAqDNdLTYVwQQQAABBBBAAAEEEEAAAQQQQAABBBCoSYAAaE1cZEYAAQQQQAABBBBAAAEEEEAAAQQQQACBZhIgANpMR4t9RQABBBBAAAEEEEAAAQQQQAABBBBAAIGaBAiA1sRFZgQQQAABBBBAAAEEEEAAAQQQQAABBBBoJgECoM10tNhXBBBAAAEEEEAAAQQQQAABBBBAAAEEEKhJgABoTVxkRgABBBBAAAEEEEAAAQQQQAABBBBAAIFmEiAA2kxHi31FAAEEEEAAAQQQQAABBBBAAAEEEEAAgZoECIDWxEVmBBBAAAEEEEAAAQQQQAABBBBAAAEEEGgmAQKgzXS02FcEEEAAAQQQQAABBBBAAAEEEEAAAQQQqEmAAGhNXGRGAAEEEEAAAQQQQAABBBBAAAEEEEAAgWYSIADaTEeLfUUAAQQQQAABBBBAAAEEEEAAAQQQQACBmgQIgNbERWYEEEAAAQQQQAABBBBAAAEEEEAAAQQQaCYBAqDNdLTYVwQQQAABBBBAAAEEEEAAAQQQQAABBBCoSYAAaE1cZEYgWwK//PKLu/jii92GG27oevbs6WabbTbXv39/d+yxx7onnngiWxiUFoGEwO233+522GEHt/LKK/vzYp555nFrr722Gz58uHv66acTOctPvv76627YsGFu+eWXd7PMMovr06ePf3/ppZe6b775pvzKLEWgRQS+/PJLt9xyy7l5553X7bnnnlWViutTVUxkajGBH374wV1wwQX+OqFzplu3bm7ppZd2W2+9tbv33nurKi3nTlVMZGoxgccff9ztvPPObqWVVvK/txZccEF/T3PMMce4r776qurS8rutaioyNqnAJpts4jp16uTOOeecqkuQ1nWlQ86viIQAAggUEXjnnXeivn37RvaXr+i/Ll26RP/4xz+KrMksBFpXwC7MkT0QKHpOhHNlmmmmifbff//o66+/Lgtx6qmnRtNOO23Jba222mrRp59+WnYbLESgFQTspjQ+D7bbbruKReL6VJGIDC0o8NZbb0UWvInPlXDNSb5utdVW0XfffVey9Jw7JWlY0KIC9tAgsgdrUefOnUueO/PPP3908803VxTgd1tFIjI0ucC5554bnydnn312VaVJ67rSUedXJ5XKLpwkBBBAIBZQbZy11lrLPfvss36eahkMHDjQLbDAAu7BBx90N910k7Mf2P7pkP1xdPvss0+8LhMItKrA999/72t8Tpw40Rdx7rnn9rVAVWvz22+/dU8++aS7+uqr3c8//+yXq6bB5ZdfXpRDNTx33XVXv2yGGWZwFvRxFvB0b7/9trvtttvcM88845cts8wy7u6773aqYUpCoBUFrrvuOv/9D2XTufDPf/4zvC145fpUQMKMDAg89thjbrPNNnMff/yxL+0iiyzittxyS6drxIQJE9xFF13kr0NauPvuu7sLL7ywQIVzp4CEGRkQGDFihDv99NN9Saeffnp/fvzhD39wOh9uvfVWd8899/hl0003ndN5pnueYonfbcVUmNdKArqH2Wmnndyvv/7qi6V7/H333bdsEdO6rnTo+VVVWJdMCCCQKYFDDjkkfvozaNCgSE9Pk2n8+PFR9+7dfR7VBH333XeTi5lGoCUFLNAfnxfWFUT0ySefFJTTmr9HFqyM811//fUFeaZMmRJ17drV59F5dP/99+fk+fHHH6PBgwfH29h7771zlvMGgVYRsIB/ZF2rxN91+5UdVaoByvWpVY4+5ahWwB6+Rb169YrPk1NOOaVg1RdffDFSLTadQ/pnzeEL8nDuFJAwo8UFHnnkkcia8vpzQteaF154oaDEJ510Unze2APtyJryFuThd1sBCTNaSMAqcUSH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WREgAJqVI005EUAAAQQQQAABBBBAAAEEEEAAAQQQyKAAAdAMHnSKjAACCCCAAAIIIIAAAggggAACCCCAQFYECIBm5UhTTgQQQAABBBBAAAEEEEAAAQQQQAABBDIoQAA0gwedIiOAAAIIIIAAAggggAACCCCAAAIIIJAVAQKgWTnSlBMBBBBAAAEEEEAAAQQQQAABBBBAAIEMChAAzeBBp8gIIIAAAggggAACCCCAAAIIIIAAAghkRYAAaFaONOVEAAEEEEAAAQQQQAABBBBAAAEEEEAggwIEQDN40CkyAggggAACCCCAAAIIIIAAAggggAACWREgAJqVI005EUAAAQQQQAABBBBAAAEEEEAAAQQQyKAAAdAMHnSKjAACCCCAAAIIIIAAAggggAACCCCAQFYECIBm5UhTTgQQQAABBBBAAAEEEEAAAQQQQAABBDIoQAA0gwedIiOAAAIIIIAAAggggAACCCCAAAIIIJAVAQKgWTnSlBMBBBBAAAEEEEAAAQQQQAABBBBAAIEMChAAzeBBp8gIIIAAAggggAACCCCAAAIIIIAAAghkRYAAaFaONOVEAAEEEEAAAQQQQAABBBBAAAEEEEAggwIEQDN40CkyAggggAACCCCAAAIIIIAAAggggAACWREgAJqVI005EUAAAQQQQAABBBBAAAEEEEAAAQQQyKAAAdAMHnSKjAACCCCAAAIIIIAAAggggAACCCCAQFYECIBm5UhTTgQQQAABBBBAAAEEEEAAAQQQQAABBDIoQAA0gwedIiOAAAIIIIAAAggggAACCCCAAAIIIJAVAQKgWTnSlBMBBBBAAAEEEEAAAQQQQAABBBBAAIEMChAAzeBBp8gIIIAAAggggAACCCCAAAIIIIAAAghkRYAAaFaONOVEAAEEEEAAAQQQQAABBBBAAAEEEEAggwIEQDN40CkyAggggAACCCCAAAIIIIAAAggggAACWREgAJqVI005EUAAAQQQQAABBBBAAAEEEEAAAQQQyKAAAdAMHnSKjAACCCCAAAIIIIAAAggggAACCCCAQFYECIBm5UhTTgQQQAABBBBAAAEEEEAAAQQQQAABBDIoQAA0gwedIiOAAAIIIIAAAggggAACCCCAAAIIIJAVAQKgWTnSlBMBBBBAAAEEEEAAAQQQQAABBBBAAIEMChAAzeBBp8gIIIAAAggggAACCCCAAAIIIIAAAghkRYAAaFaONOVEAAEEEEAAAQQQQAABBBBAAAEEEEAggwIEQDN40CkyAggggAACCCCAAAIIIIAAAggggAACWREgAJqVI005EUAAAQQQQAABBBBAAAEEEEAAAQQQyKAAAdAMHnSKjAACCCCAAAIIIIAAAggggAACCCCAQFYEumSloJQTAQQQQAABBBBAAAEEEEAAAQQ6VuDZZ591b731lltmmWVcz549Cz48iiL38ssvu88++8zn6datW0GeYjM++ugj99hjj7nOnTu7TTbZxHXq1KlYtnjeuHHj3K+//ur69+/vunQhFBLDMIFARgSoAZqRA00xEUAAAQSaQ+CXX37xP/7nnXdep38777xzc+w4e1mXwIYbbuiPd48ePeraTr0r6/v3zjvv1LuZVNZvFJNaCtNIfrXsd6vkLee/0kor+XNsySWXbPriXnHFFb4sukZomvR/AiussIJ3WXrppSEpITA1zoP333/frbPOOm7IkCFuuummK9izq6++2s0222xuqaWWcquvvrrr3r2723777d0XX3xRkDd/xsiRI93AgQPdZZddVjH4qXX/93//12222WbutNNOy98U7xFAIAMCBEAzcJApIgIIIIBA8wjceeed7rnnnnMffvih/3fNNde4d999t3kKwJ62SeCTTz6Jj3mbNpDCSg899JBTAOFf//pXClurfxONYFJLKRrNr5Z9b4W8lfw//vhjf45NmTKl6Yv73XffxX8vNE36PwHVBtS1sxWOcXsd06lxHuy9997u888/dwpWzjfffDlFu+SSS9wOO+zgg50KgKoWZ9euXZ1++6y22mruxx9/zMmffPPKK6/4BwDTTDONO/bYY5OLSk4ff/zxbqaZZnKjR4/2NU5LZmQBAgi0pAAB0JY8rBQKAQQQQKBZBXQzoDTHHHP4159//tn9z//8j5/mPwTaS+CWW25xa621llMzRVLtAvjVbpbmGvinqcm2EEhP4Prrr/cP1RZYYAF3yCGH5Gz4hx9+cEcffbSfp9Yuevh7xx13+CbtClK++OKL7txzz81ZJ/lm1KhRTrW+FUDt3bt3clHJaQVgDz30UPf999+7YcOGOTW9JyGAQHYECIBm51hTUgQQQACBBhdQzQzdyCvph/kiiyzipy+66CKnQCgJgfYSUL9rIVXqQy3k4/V3Afx+t5gaU9X4jx071jd/vfzyy6fGLvKZCGROQE3Y9913X1/uww8/3NfsTCLcfPPNTs3jlf7617/6fjw1rS4MdtxxR026Cy64wL/m/6eHdddee62bdtppnQKhtaSDDjrIN7lXrfFS269le+RFAIHmESAA2jzHij1FAAEEEGhxgX/84x/up59+8qVUM7CtttrKT6sJ/K233tripad4CCCAQPsJ6G/q1ltv7f70pz+134ewZQQQiAUUXFR3BLPPPrvbfffd4/lhQoMeKWl5eOAbli2//PJ+8o033vCDFoX54fUvf/mLr7256667ukUXXTTMrup1lllmcXvuuafPe+KJJ/KAuSo1MiHQGgIEQFvjOFIKBBBAAIEWEAjN32eeeWY/EIAGAQjpvPPOC5O8IoAAAggggAACDSugh7l///vf/f5tscUWbvrppy/YV40KrzTXXHMVLAvz1Afoe++9l7Nco76rtYy2GZrQ52So4s3gwYN9rrfffttdd911VaxBFgQQaAWBLq1QCMqAAAIIIIBAswv897//9f1fqRwa/VrNujQgTZ8+fdwLL7zg7rnnHvfaa6+5xRdfvGJR33zzTXfOOee4J554wq+jPq60Hf1bY4013KBBg8puo971tXHd/Cigq3I9/fTTbvLkyU6jLy+33HK+fLohqpTq3Y9610+rHNrO888/784880zvoVHWdSzU56aC3GmNWKy+0DTCrZoF6ruiz1looYXiYz906FC34IIL5rD/v//3//zNnwaTCOmf//ynmzhxon978MEHuyWWWMJPH3jggb7ftLnnnrvsgBPPPPOMCwF7jbarf8VSWib1fNcefvhhp5rXSscdd5y/Ede5dvfdd7tHH33UvfTSS75vOZ2LapK54oor5hSlFj+t2JZjlPOBFd4cccQRTs3BNXiIjrdqj994443u/vvv9+Xp1auXW2+99dymm27qVl555Xhr+r7ccMMN7r777nNPPvmk/54su+yy7phjjimomRWv9NtEPf7JbbVlO7X4H3XUUU4Da80444zujDPOSH60C26rrLKK+/Of/+zUHYnOg0ceecS7denSxf891gjVe+21V9GRrJMbVN+G+l5pG6+//rofyEXeWl81z/SQS+fWt99+6zQq92677ZZcvU3TGg1eg+jpe6v9VVlWXXVVpxpyGlSmUmqLf9hm2n7aroJc6v5F30cFymSm65/+bupvkWrx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" class="img-fluid figure-img" alt="Horizontal bar chart comparing benchmark attainment across three fictional course outcomes." width="672"></p>
-<figcaption>Fictional example: percentage of assessed students meeting the selected benchmark.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="connect-the-result-to-a-next-step" class="level2">
-<h2 class="anchored" data-anchor-id="connect-the-result-to-a-next-step">Connect the result to a next step</h2>
-<p><strong>Outcome 3</strong> had the lowest benchmark attainment in this fictional dataset: <strong>37.5%</strong> of assessed students met the benchmark of <strong>70</strong>.</p>
-<p>A course team could review the outcome mapping, assessment items, and learning opportunities before selecting a response. The calculation alone cannot establish why students struggled.</p>
-<p><strong>Try it:</strong> Change <code>benchmark &lt;- 70</code> to another value and render again. The table, chart, and result statement update from the same calculation.</p>
-<p>Changing the rule also changes the meaning of the result. Document why you changed it and avoid comparing reports that use different definitions without explaining the difference.</p>
-</section>
-</section>
-<section id="redesign-one-process" class="level1">
-<h1>Redesign one process</h1>
-<p>Choose a familiar workflow, such as:</p>
-<ul>
-<li>Progression review.</li>
-<li>Course assessment reporting.</li>
-<li>Admissions evaluation.</li>
-<li>Curriculum mapping.</li>
-<li>Clinical education placement.</li>
-<li>Accreditation evidence.</li>
-</ul>
-<p>Then:</p>
-<ol type="1">
-<li>Map the current process.</li>
-<li>Mark duplicate entries, unclear ownership, hidden calculations, bias risks, and missing version history.</li>
-<li>Choose one principle and one feasible improvement.</li>
-<li>Identify how you will judge its impact.</li>
-</ol>
-<section id="process-redesign-worksheet" class="level2">
-<h2 class="anchored" data-anchor-id="process-redesign-worksheet">Process redesign worksheet</h2>
-<p>Copy this table into your planning document, or print the page and write in the blank column.</p>
+<section id="put-your-pilot-plan-on-one-page" class="level1">
+<h1>Put your pilot plan on one page</h1>
+<p>Copy this table into a document and complete it with the people who will participate.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Prompt</th>
-<th>Your notes</th>
+<th>Planning item</th>
+<th>Your response</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Process to improve</td>
-<td>______________________________</td>
+<td>Process and boundaries</td>
+<td></td>
 </tr>
 <tr class="even">
-<td>Current pain point</td>
-<td>______________________________</td>
+<td>Educational or institutional challenge</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td>Principle to apply</td>
-<td>______________________________</td>
+<td>Aim, including date, baseline, and target</td>
+<td></td>
 </tr>
 <tr class="even">
-<td>First improvement</td>
-<td>______________________________</td>
+<td>Exact pain point</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td>Evidence of impact</td>
-<td>______________________________</td>
+<td>Principle guiding the test</td>
+<td></td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="implementation-concept" class="level2">
-<h2 class="anchored" data-anchor-id="implementation-concept">Implementation concept</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Prompt</th>
-<th>Your notes</th>
+<tr class="even">
+<td>First small change</td>
+<td></td>
 </tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td>Institutional challenge</td>
-<td>______________________________</td>
+<td>Course, cohort, or cycle included</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Person responsible</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Partners and resources needed</td>
+<td></td>
 </tr>
 <tr class="even">
 <td>Tools or skills needed</td>
-<td>______________________________</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td>Campus partner or resource</td>
-<td>______________________________</td>
+<td>Improvement measure</td>
+<td></td>
 </tr>
 <tr class="even">
-<td>Person responsible for the pilot</td>
-<td>______________________________</td>
+<td>What must not get worse</td>
+<td></td>
 </tr>
 <tr class="odd">
-<td>First milestone and date</td>
-<td>______________________________</td>
+<td>Data definitions and quality checks</td>
+<td></td>
 </tr>
 <tr class="even">
-<td>How impact will be assessed</td>
-<td>______________________________</td>
+<td>Access, review, and correction responsibilities</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Test date and review date</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Decision after review</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>Potential partners include assessment staff, program leadership, faculty, students, IT, institutional research, and clinical education.</p>
-<p>Match participation to the workflow and to the decisions it supports.</p>
-</section>
-<section id="evaluate-the-improvement" class="level2">
-<h2 class="anchored" data-anchor-id="evaluate-the-improvement">Evaluate the improvement</h2>
-<p>Possible measures include:</p>
-<ul>
-<li>Time spent preparing a report.</li>
-<li>Frequency of duplicate entries.</li>
-<li>Number of corrections required.</li>
-<li>Ability of a colleague to repeat the workflow.</li>
-<li>Time from identifying a concern to reviewing it.</li>
-</ul>
-<p>Establish a baseline before the pilot. Afterward, assess whether the change improved the work and what still needs attention.</p>
-</section>
-</section>
-<section id="how-this-resource-demonstrates-the-principles" class="level1">
-<h1>How this resource demonstrates the principles</h1>
+<section id="a-practical-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-sequence">A practical sequence</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -2923,41 +2818,169 @@ break-inside: avoid;
 </colgroup>
 <thead>
 <tr class="header">
-<th>Principle</th>
-<th>How it appears in this resource</th>
+<th>When</th>
+<th>Focus</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reproducibility</td>
-<td>The source contains the example data and calculation rules.</td>
+<td>Before the test</td>
+<td>Confirm the aim, baseline, definitions, participants, and guardrails.</td>
 </tr>
 <tr class="even">
-<td>Transparency</td>
-<td>Readers can expand the R code and inspect the method.</td>
+<td>During the test</td>
+<td>Record time, discrepancies, questions, and unexpected work.</td>
 </tr>
 <tr class="odd">
-<td>Automation</td>
-<td>Rendering regenerates the table, chart, and result statement.</td>
+<td>At the review</td>
+<td>Compare results with the aim and check what must not get worse.</td>
 </tr>
 <tr class="even">
-<td>Version control</td>
-<td>The <code>.qmd</code> can be tracked in a Git repository.</td>
-</tr>
-<tr class="odd">
-<td>Data storytelling</td>
-<td>The calculated result appears alongside context and a possible next step.</td>
-</tr>
-<tr class="even">
-<td>Collaborative workflows</td>
-<td>Colleagues can review and edit the same documented source.</td>
+<td>After the review</td>
+<td>Continue, revise, or stop the change. Document why.</td>
 </tr>
 </tbody>
 </table>
+<p>Match the timeline to the work. A process that occurs once per term may need a historical dataset or a limited trial before the next full cycle.</p>
 </section>
-<section id="references-from-the-presentation" class="level1">
-<h1>References from the presentation</h1>
-<p>These entries retain the reading list supplied in the presentation. Bibliographic details have not been independently verified for this adaptation.</p>
+</section>
+<section id="learn-from-the-test" class="level1">
+<h1>Learn from the test</h1>
+<p>Use the review to answer:</p>
+<ol type="1">
+<li>Did the process improve in the way we intended?</li>
+<li>Did accuracy, access, workload, or another protected condition worsen?</li>
+<li>Could another person complete the process?</li>
+<li>Which problems remained?</li>
+<li>What evidence would justify expanding the change?</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Decision</th>
+<th>When it may fit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Continue</strong></td>
+<td>The test met its aim without worsening the protected condition.</td>
+</tr>
+<tr class="even">
+<td><strong>Revise and retest</strong></td>
+<td>The approach helped, but a definition, step, or responsibility needs adjustment.</td>
+</tr>
+<tr class="odd">
+<td><strong>Stop or change direction</strong></td>
+<td>The approach introduced unacceptable problems or did not address the pain point.</td>
+</tr>
+</tbody>
+</table>
+<p>Keep a short record of what changed, what you learned, and the next decision. That history is part of making the improvement sustainable.</p>
+</section>
+<section id="explore-how-this-resource-was-built" class="level1">
+<h1>Explore how this resource was built</h1>
+<p>This companion resource was written in Quarto, which combines document text with optional executable code. Its source is maintained in a GitHub repository.</p>
+<p>Using a document source supports review and revision. When calculations are included, rendering can regenerate their results alongside the explanation.</p>
+<p><a href="https://github.com/madelineratoza/From-Spreadsheets-to-Systems">View the source repository</a></p>
+<details>
+<summary>
+Optional: see a small example of reporting with R
+</summary>
+<section id="a-reusable-calculation" class="level2">
+<h2 class="anchored" data-anchor-id="a-reusable-calculation">A reusable calculation</h2>
+<p>The fictional records below represent how long five reports took to prepare before and during a pilot.</p>
+<p>The example demonstrates how a calculation and its result statement can stay together. It does not establish that an improvement would occur in another program.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>View the R code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pilot <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">report =</span> <span class="fu">paste</span>(<span class="st">&quot;Report&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">before_minutes =</span> <span class="fu">c</span>(<span class="dv">90</span>, <span class="dv">85</span>, <span class="dv">95</span>, <span class="dv">80</span>, <span class="dv">100</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">pilot_minutes =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">55</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the basic input structure.</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="sc">!</span><span class="fu">anyDuplicated</span>(pilot<span class="sc">$</span>report),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(<span class="fu">is.finite</span>(pilot<span class="sc">$</span>before_minutes)),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(<span class="fu">is.finite</span>(pilot<span class="sc">$</span>pilot_minutes)),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(pilot<span class="sc">$</span>before_minutes <span class="sc">&gt;</span> <span class="dv">0</span>),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(pilot<span class="sc">$</span>pilot_minutes <span class="sc">&gt;=</span> <span class="dv">0</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>mean_before <span class="ot">&lt;-</span> <span class="fu">mean</span>(pilot<span class="sc">$</span>before_minutes)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>mean_pilot <span class="ot">&lt;-</span> <span class="fu">mean</span>(pilot<span class="sc">$</span>pilot_minutes)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>minutes_saved <span class="ot">&lt;-</span> mean_before <span class="sc">-</span> mean_pilot</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>percent_reduction <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> minutes_saved <span class="sc">/</span> mean_before</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  pilot,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Fictional report&quot;</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Before: minutes&quot;</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Pilot: minutes&quot;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Fictional report</th>
+<th style="text-align: right;">Before: minutes</th>
+<th style="text-align: right;">Pilot: minutes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Report 1</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Report 2</td>
+<td style="text-align: right;">85</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Report 3</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Report 4</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">45</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Report 5</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">55</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In this fictional example, average preparation time changed from <strong>90.0 minutes</strong> to <strong>47.0 minutes</strong>, a reduction of <strong>43.0 minutes (47.8%)</strong>.</p>
+<p>A team would also need to verify calculation accuracy and check whether work shifted to someone else. These preparation times alone cannot show that every part of the workflow improved.</p>
+<p>Change the fictional times and render again to update the table and result statement.</p>
+</section>
+<section id="what-makes-this-useful" class="level2">
+<h2 class="anchored" data-anchor-id="what-makes-this-useful">What makes this useful?</h2>
+<p>The inputs, calculation, and explanation are kept in the same source. Another person can inspect the rules and rerun the example.</p>
+<p>A spreadsheet with documented formulas could support a similar small test. Code becomes useful when it fits the task, the team’s skills, and the need for repeated work.</p>
+</section></details>
+</section>
+
+<section id="further-reading" class="level1">
+<h1>Further reading</h1>
+<p>The presentation draws on scholarship about learning analytics, educational data mining, and ethical use of educational data.</p>
+<p>The entries below retain the presentation’s reading list. Bibliographic details should be verified before reuse in a publication.</p>
 <ol type="1">
 <li><p>Shorten G. Learning analytics and the future of postgraduate medical training. <em>Ir J Med Sci.</em> 2024;193(5):2607-2609.</p></li>
 <li><p>Blease C, Kharko A, Bernstein M, et al. Machine learning in medical education: a survey of the experiences and opinions of medical students in Ireland. <em>BMJ Health Care Inform.</em> 2022;29(1):e100480.</p></li>
